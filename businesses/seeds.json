@@ -1,0 +1,90 @@
+[
+  {
+    "model": "businesses.business",
+    "pk": 1,
+    "fields": {
+      "name": "Highstreet Store",
+      "image": "https://i.pinimg.com/originals/37/75/00/377500c6209c2d2def7a70ed013718b0.jpg",
+      "category": "outfit",
+      "latitude": 2.1,
+      "longitude": 1.5
+    }
+  },
+  {
+    "model": "businesses.business",
+    "pk": 2,
+    "fields": {
+      "name": "Trendy Store",
+      "image": "https://i.pinimg.com/originals/92/77/36/927736fed34aa73eda4e306944fafbe9.jpg",
+      "category": "outfit",
+      "latitude": 2.1,
+      "longitude": 1.5
+    }
+  },
+  {
+    "model": "businesses.business",
+    "pk": 3,
+    "fields": {
+      "name": "Vintage Store",
+      "image": "https://i.pinimg.com/474x/66/c9/35/66c9353cabd612b7418a33c6ed794e1e--fall-flats-flat-lay.jpg",
+      "category": "outfit",
+      "latitude": 2.1,
+      "longitude": 1.5
+    }
+  },
+  {
+    "model": "businesses.business",
+    "pk": 4,
+    "fields": {
+      "name": "Expensive Store",
+      "image": "https://i.pinimg.com/originals/d2/e0/fd/d2e0fdfdfd77c30059584ab3337dfffb.png",
+      "category": "outfit",
+      "latitude": 2.1,
+      "longitude": 1.5
+    }
+  },
+  {
+    "model": "businesses.business",
+    "pk": 5,
+    "fields": {
+      "name": "Latte Cafe",
+      "image": "https://i.pinimg.com/originals/a5/0d/4c/a50d4c817784923f72dcc6b5877ddcb0.jpg",
+      "category": "cafe",
+      "latitude": 2.1,
+      "longitude": 1.5
+    }
+  },
+  {
+    "model": "businesses.business",
+    "pk": 6,
+    "fields": {
+      "name": "Hot Chocolate Cafe",
+      "image": "https://bit.ly/2VwZKx4",
+      "category": "cafe",
+      "latitude": 2.1,
+      "longitude": 1.5
+    }
+  },
+  {
+    "model": "businesses.business",
+    "pk": 7,
+    "fields": {
+      "name": "Iced Coffee Cafe",
+      "image": "https://i.pinimg.com/originals/01/f5/42/01f542a3e0363e1f25920417ce725224.jpg",
+      "category": "cafe",
+      "latitude": 2.1,
+      "longitude": 1.5
+    }
+  },
+  {
+    "model": "businesses.business",
+    "pk": 8,
+    "fields": {
+      "name": "Peppermint Tea Cafe",
+      "image": "https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2018/05/peppermint.jpg?itok=b61FqQqy",
+      "category": "cafe",
+      "latitude": 2.1,
+      "longitude": 1.5
+    }
+  }
+]

@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 import django.contrib.auth.password_validation as validations
 from django.contrib.auth.hashers import make_password
 from businesses.models import Business
-from .models import User, Comment
+from .models import User
 from django.core.exceptions import ValidationError
 User = get_user_model()
 
@@ -32,29 +32,29 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'password', 'password_confirmation', 'comments')
+        fields = ('id', 'email', 'password', 'password_confirmation', 'username', 'profile_image', 'location')
 
-class BusinessSerializer(serializers.ModelSerializer):
+# class BusinessSerializer(serializers.ModelSerializer):
 
-    class Meta:
-      model = Business
-      fields = '__all__' 
+#     class Meta:
+#       model = Business
+#       fields = '__all__' 
 
 # this serialiser is specifically for populating the owner info when someone leaves a comment on someone elses profile - needed to be different to the user serializer above!!
-class OwnerSerializer(serializers.ModelSerializer):
+# class OwnerSerializer(serializers.ModelSerializer):
   
-    class Meta:
-        model = User
-        fields = ('id', 'username')
+#     class Meta:
+#         model = User
+#         fields = '__all__'
 
-class CommentSerializer(serializers.ModelSerializer):
+# class CommentSerializer(serializers.ModelSerializer):
 
-    class Meta:
-        model = Comment
-        fields = '__all__'
+#     class Meta:
+#         model = Comment
+#         fields = ('id', 'text', 'owner')
 
-class PopulatedCommentSerializer(CommentSerializer):
-    owner = OwnerSerializer()
+# class PopulatedCommentSerializer(CommentSerializer):
+    # owner = OwnerSerializer()
     # user = UserSerializer()
 
 # this serializer displays comments and gets the owner of the comment from the populated comment serializer 
@@ -62,5 +62,7 @@ class PopulatedCommentSerializer(CommentSerializer):
     # businesses = BusinessSerializer(many=True)
     # comments = PopulatedCommentSerializer(many=True)
     
-class PopulatedProfileSerializer(UserSerializer):
-    comments = PopulatedCommentSerializer(many=True)
+# class PopulatedProfileSerializer(UserSerializer):
+    # owner = OwnerSerializer()
+    # businesses = BusinessSerializer(many=True)
+    # comments = PopulatedCommentSerializer(many=True)
