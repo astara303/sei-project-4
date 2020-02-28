@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie' 
 const csrftoken = Cookies.get('csrftoken')
-// import Auth from // import auth
+import Auth from './auth'
 
 export const headers = {
   common: {
