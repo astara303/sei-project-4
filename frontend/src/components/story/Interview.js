@@ -1,4 +1,9 @@
 import React from 'react'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 import InterviewSuccessful from './InterviewSuccessful'
 import InterviewUnsuccessful from './InterviewUnsuccessful'
@@ -19,7 +24,6 @@ class Interview extends React.Component {
       incorrectAnswers: []
     },
     combinedAnswers: '',
-    //dummy result data
     data: [
       {
         question: 'What is the value of b?',
@@ -103,32 +107,41 @@ class Interview extends React.Component {
     }
   }
 
-  //
   render() {
     return (
       <>
-      {!this.state.endInterview &&
-        <div>
-        <h1 className="title">This is the interview page.</h1>
-        <p>{this.state.questionObj.question}</p>
-        <hr/>
-        <p>{this.state.questionObj.codeOne}</p>
-        {this.state.questionObj.codeTwo &&
-          <p>{this.state.questionObj.codeTwo}</p>
-        }
-        <hr/>
-        {this.state.combinedAnswers && this.state.combinedAnswers.map(answer => (
-          <button onClick={this.handleGuess} key={answer}>{answer}</button>
-        ))}
-        {this.state.playerGuess &&
-          <>
-            <div>
-              {this.state.playerGuess}
-            </div>
-            <button onClick={this.handleNext}>Next</button>
-          </>
-        }
-        </div>
+        {!this.state.endInterview &&
+          <Container>
+            <Row className="justify-content-md-center">
+              <Col md="auto">
+                <Card style={{ width: '40rem' }}>
+                  <Card.Body>
+                    <Card.Title>This is the interview page.</Card.Title>
+                    <Card.Text>
+                      <p>{this.state.questionObj.question}</p>
+                      <hr />
+                      <p>{this.state.questionObj.codeOne}</p>
+                      {this.state.questionObj.codeTwo &&
+                        <p>{this.state.questionObj.codeTwo}</p>
+                      }
+                    </Card.Text>
+                    <hr />
+                    {this.state.combinedAnswers && this.state.combinedAnswers.map(answer => (
+                      <Button variant="outline-dark" onClick={this.handleGuess} key={answer}>{answer}</Button>
+                    ))}
+                    {this.state.playerGuess &&
+                  <>
+                    <div>
+                      <p>{this.state.playerGuess}</p>
+                    </div>
+                    <Button variant="dark" onClick={this.handleNext}>Next</Button>
+                  </>
+                }
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Row>
+          </Container>
         }
         {this.state.endInterview && this.state.score >= 3 &&
           <InterviewSuccessful score={this.state.score} />

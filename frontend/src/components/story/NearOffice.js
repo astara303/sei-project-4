@@ -1,5 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 class NearOffice extends React.Component {
   state = {
@@ -51,7 +56,7 @@ class NearOffice extends React.Component {
         this.setState({ helpGood })
       } else {
         const helpBad = true
-        this.setState ({ helpBad })
+        this.setState({ helpBad })
       }
     } else {
       const luck = Math.random() < 0.5
@@ -69,27 +74,37 @@ class NearOffice extends React.Component {
   render() {
     console.log(this.state)
     return (
-      <div>
-        <h1 className="title">Time to make a choice.</h1>
-        <p>As you turn a corner, you see someone drop a stack of papers that all blow off in different directions.</p>
-        <p>Your cafe detour has left you no time to hang about before you need to check in at reception for the interview.</p> 
-        <p>What do you do?</p>
-          <button onClick={this.handleChoice}>Stop and help collect the papers.</button>
-          <button onClick={this.handleChoice}>Keep going- you can't be late.</button>
-          <br/>
-          {this.state.helpGood &&
-          <Link to={'/helpone'}><button>Continue</button></Link>
-          }
-          {this.state.helpBad &&
-          <Link to={'/helptwo'}><button>Continue</button></Link>
-          }
-          {this.state.keepGoingGood &&
-          <Link to={'/goone'}><button>Continue</button></Link>
-          }
-          {this.state.keepGoingBad &&
-          <Link to={'/gotwo'}><button>Continue</button></Link>
-          }
-      </div>
+      <Container>
+        <Row className="justify-content-md-center">
+          <Col md="auto">
+            <Card style={{ width: '35rem' }}>
+              <Card.Body>
+                <Card.Title>Time to make a choice.</Card.Title>
+                <Card.Text>
+                  <p>As you turn a corner, you see someone drop a stack of papers that all blow off in different directions.</p>
+                  <p>Your cafe detour has left you no time to hang about before you need to check in at reception for the interview.</p>
+                  <p>What do you do?</p>
+                </Card.Text>
+                <Button variant="outline-dark" onClick={this.handleChoice}>Stop and help collect the papers.</Button>
+                <Button variant="outline-dark" onClick={this.handleChoice}>Keep going- you can't be late.</Button>
+                <hr />
+                {this.state.helpGood &&
+                  <Link to={'/helpone'}><Button variant="dark">Continue</Button></Link>
+                }
+                {this.state.helpBad &&
+                  <Link to={'/helptwo'}><Button variant="dark">Continue</Button></Link>
+                }
+                {this.state.keepGoingGood &&
+                  <Link to={'/goone'}><Button variant="dark">Continue</Button></Link>
+                }
+                {this.state.keepGoingBad &&
+                  <Link to={'/gotwo'}><Button variant="dark">Continue</Button></Link>
+                }
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
     )
   }
 
