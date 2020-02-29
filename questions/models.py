@@ -5,9 +5,9 @@ from django.contrib.postgres.fields import ArrayField
 class Question(models.Model):
     question = models.CharField(max_length=500)
     code_one = models.CharField(max_length=200)
-    code_two = models.CharField(max_length=200, null=True)
+    code_two = models.CharField(max_length=200, null=True, blank=True)
     correct_answer = models.CharField(max_length=200)
-    incorrect_answers = ArrayField(models.CharField(max_length=50, blank=True), size=3)
+    incorrect_answers = ArrayField(models.CharField(max_length=100, blank=True), size=3)
 
     def __str__(self):
       return f'{self.question}'
