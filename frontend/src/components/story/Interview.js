@@ -87,7 +87,6 @@ class Interview extends React.Component {
       endInterview = true
       return this.setState({ endInterview })
     } else {
-      endInterview = true
       const num = this.state.questionNum + 1
       const newQuestion = this.state.data[num]
       const questionObj = {

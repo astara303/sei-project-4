@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 class NearOffice extends React.Component {
   state = {
-    data: ['this will be filled with business data'],
     helpGood: false,
     helpBad: false,
     keepGoingGood: false,
