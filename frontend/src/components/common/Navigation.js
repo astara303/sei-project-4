@@ -13,17 +13,26 @@ class Navigation extends React.Component {
   // toggleNavbar = () => {
   //   this.setState({ navbarOpen: !this.state.navbarOpen })
   // }
-
+  
   handleLogout = () => {
     Auth.logout()
     this.props.history.push('/')
   }
-
+  
   // componentDidUpdate(prevProps) {
-  //   if (this.props.location.pathname !== prevProps.location.pathname) {
-  //     this.setState({ navbarOpen: false })
-  //   }
-  // }
+    //   if (this.props.location.pathname !== prevProps.location.pathname) {
+      //     this.setState({ navbarOpen: false })
+      //   }
+      // }
+      
+  componentDidMount() {
+    if (Auth.isAuthenticated()) {
+      const payload = Auth.getPayload().sub
+      this.setState({ payload })
+    } else {
+    return
+    }
+  }
 
   componentDidMount() {
     if (Auth.isAuthenticated()) {

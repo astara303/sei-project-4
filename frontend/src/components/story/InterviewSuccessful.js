@@ -11,6 +11,7 @@ class InterviewSuccessful extends React.Component {
 
   render() {
     return (
+      <header className="homepage-masthead masthead">
       <Container>
         <Row className="justify-content-md-center">
           <Col md="auto">
@@ -24,6 +25,7 @@ class InterviewSuccessful extends React.Component {
           </Col>
         </Row>
       </Container>
+      </header>
     )
   }
 

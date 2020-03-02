@@ -110,24 +110,28 @@ class Interview extends React.Component {
   render() {
     return (
       <>
+      <header className="masthead homepage-masthead">
         {!this.state.endInterview &&
           <Container>
             <Row className="justify-content-md-center">
               <Col md="auto">
-                <Card style={{ width: '40rem' }}>
+                <Card style={{ width: '45rem' }}>
                   <Card.Body>
-                    <Card.Title className="small-title">This is the interview page.</Card.Title>
+                    <Card.Title className="small-title">It's interview time!</Card.Title>
+                    <br />
                     <Card.Text>
                       <p>{this.state.questionObj.question}</p>
-                      <hr />
-                      <p>{this.state.questionObj.codeOne}</p>
+                      <br />
+                      {/* <hr /> */}
+                      <p className="code">{this.state.questionObj.codeOne}</p>
                       {this.state.questionObj.codeTwo &&
                         <p>{this.state.questionObj.codeTwo}</p>
                       }
                     </Card.Text>
-                    <hr />
+                    <br />
+                    {/* <hr /> */}
                     {this.state.combinedAnswers && this.state.combinedAnswers.map(answer => (
-                      <Button variant="secondary" className="btn btn-secondary add-margin" onClick={this.handleGuess} key={answer}>{answer}</Button>
+                      <Button variant="secondary" className="btn btn-secondary add-margin code" onClick={this.handleGuess} key={answer}>{answer}</Button>
                     ))}
                     {this.state.playerGuess &&
                   <>
@@ -149,6 +153,7 @@ class Interview extends React.Component {
         {this.state.endInterview && this.state.score < 3 &&
           <InterviewUnsuccessful score={this.state.score} />
         }
+        </header>
       </>
     )
   }

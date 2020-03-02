@@ -9,6 +9,7 @@ class Business(models.Model):
   category = models.CharField(max_length=50)
   latitude = models.FloatField(null=True)
   longitude = models.FloatField(null=True)
+  users = models.ManyToManyField('jwt_auth.User', related_name='businesses', blank=True)
 
   def __str__(self):
     return self.name

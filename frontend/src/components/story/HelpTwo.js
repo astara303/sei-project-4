@@ -37,7 +37,7 @@ class HelpTwo extends React.Component {
                     <Card.Text><p>There will be story text here</p>
                     </Card.Text>
                     <div>
-                      <Button variant="secondary" className="btn btn-secondary" onClick={this.handleClick}>Continue</Button>
+                      <Button className="btn btn-light add-margin" onClick={this.handleClick}>Continue</Button>
                     </div>
                   </Card.Body>
                 </Card>

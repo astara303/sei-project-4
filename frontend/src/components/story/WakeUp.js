@@ -59,11 +59,12 @@ class WakeUp extends React.Component {
                   <p>You remember that you are taking a step towards a career that you are passionate about.</p>
                   <p>You know your developer skills are valuable and you’re excited to show someone what you can do.</p>
                   <p>You’ve got this!</p>
-                  <p>After showering, <span className="bold-text">it’s time to grab the outfit you planned the night before:</span></p>
+                <br />
+                  <p>After showering, it’s time to <span className="bold-text">grab the outfit you planned the night before:</span></p>
                 <div>
                   {this.state.clicked &&
                     <div>
-                      <Link to={'/intown'}><Button className="btn btn-secondary">You have some breakfast and hit the road.</Button></Link>
+                      <Link to={'/intown'}><Button className="btn btn-light">You have some breakfast and hit the road.</Button></Link>
                     </div>
                   }
                 </div>

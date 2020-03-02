@@ -16,12 +16,12 @@ const Home = () => (
       {!Auth.isAuthenticated() &&
         // <h2 className="sub">Please register or login to play</h2>
         <Link to={'/login'}>
-        <Button variant="secondary" className="btn btn-secondary" size="lg">Register or login to play</Button>
+        <Button className="btn btn-light" size="lg">Register or login to play</Button>
       </Link>
       }
       {Auth.isAuthenticated() &&
       <Link to={'/wakeup'}>
-        <Button variant="secondary" className="btn btn-secondary" size="lg">Start your story</Button>
+        <Button className="btn btn-light" size="lg">Start your story</Button>
       </Link>
       }
 

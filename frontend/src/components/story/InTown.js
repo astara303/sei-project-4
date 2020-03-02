@@ -35,6 +35,7 @@ class InTown extends React.Component {
 
   render() {
     return (
+      <header className="intown-masthead masthead">
       <Container>
         <Row className="justify-content-md-center">
           <Col md="auto">
@@ -50,11 +51,12 @@ class InTown extends React.Component {
                   <p>Data types?</p>
                   <p>Recursion?</p>
                   <p>You feel yourself going in circles, so you pop into the nearest cafe to clear your mind.</p>
+                  <br />
                   <p><span className="bold-text">What do you choose to drink?</span></p>
                 </Card.Text>
                 {this.state.clicked &&
                   <div>
-                    <Link to={'/roadworks'}><Button className="btn btn-secondary">Feeling a bit perked up, you leave the cafe and continue towards the office.</Button></Link>
+                    <Link to={'/roadworks'}><Button className="btn btn-light">Feeling a bit perked up, you leave the cafe and continue towards the office.</Button></Link>
                   </div>
                 }
                 <br />
@@ -73,6 +75,7 @@ class InTown extends React.Component {
           </Col>
         </Row>
       </Container>
+      </header>
     )
   }
 }

@@ -11,6 +11,7 @@ class InterviewUnsuccessful extends React.Component {
 
   render() {
     return (
+      <header className="wakeup-masthead masthead">
       <Container>
       <Row className="justify-content-md-center">
         <Col md="auto">
@@ -24,6 +25,7 @@ class InterviewUnsuccessful extends React.Component {
         </Col>
       </Row>
     </Container>
+    </header>
     )
   }
 
