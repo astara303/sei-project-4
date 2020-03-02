@@ -9,7 +9,7 @@ import Interview from './Interview'
 
 class GoTwo extends React.Component {
   state = {
-    score: 0,
+    score: this.props.score,
     interview: false
   }
 
@@ -24,6 +24,7 @@ class GoTwo extends React.Component {
   }
 
   render() {
+    console.log(this.props.score)
     return (
       <>
       {!this.state.interview &&

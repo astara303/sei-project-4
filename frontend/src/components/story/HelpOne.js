@@ -9,7 +9,7 @@ import Interview from './Interview'
 
 class HelpOne extends React.Component {
   state = {
-    score: 1,
+    score: this.props.score,
     interview: false
   }
 
@@ -35,10 +35,7 @@ class HelpOne extends React.Component {
                   <Card.Body>
                     <Card.Title>This is the page for a positive result from helping.</Card.Title>
                     <Card.Text>
-                    <p>You lean down and gather the papers at your feet.</p>
-                  <p>At a glance, you notice the logo for the company you’re interviewing with. You’re reminded what’s at stake, but glad that you stopped to help.</p>
-                  <p>You scoop up the remaining pages scattered about the sidewalk and hand them back to the grateful person.</p>
-                  <p>You end up walking together into the building and they’re surprised. They ask what you're there for.</p>
+                    <p>You lean down and gather the papers at your feet. At a glance, you notice the logo for the company you’re interviewing with. You’re reminded what’s at stake, but glad that you stopped to help. You scoop up the remaining pages scattered about the sidewalk and hand them back to the grateful person. You end up walking together into the building and they’re surprised. They ask what you're there for.</p>
                     </Card.Text>
                     <div>
                       <Button variant="dark" onClick={this.handleClick}>Continue</Button>

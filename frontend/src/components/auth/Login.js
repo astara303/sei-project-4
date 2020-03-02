@@ -1,5 +1,11 @@
 import React from 'react'
 import axios from 'axios'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Card from 'react-bootstrap/Card'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 import Auth from '../../lib/auth'
 
@@ -31,40 +37,40 @@ class Login extends React.Component {
 
   render() {
     return (
-      <section className="section">
-        <div className="container">
-          <div className="columns">
-            <form onSubmit={this.handleSubmit} className="column is-half is-offset-one-quarter">
-              <h2 className="title">Login</h2>
-              <div className="field">
-                <label className="label">Email</label>
-                <div className="control">
-                  <input
-                    className={`input ${this.state.error ? 'is-danger' : ''}`}
-                    name="email"
-                    placeholder="Email"
-                    onChange={this.handleChange}
-                  />
-                </div>
-              </div>
-              <div className="field">
-                <label className="label">Password</label>
-                <div className="control">
-                  <input
-                    className={`input ${this.state.error ? 'is-danger' : ''}`}
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    onChange={this.handleChange}
-                  />
-                </div>
-                {this.state.error && <small className="help is-danger">{this.state.error}</small>}
-              </div>
-              <button type="submit" className="button is-fullwidth">Login</button>
-            </form>
-          </div>
-        </div>
-      </section>
+      <Container>
+        <Row className="justify-content-md-center">
+          <Col md="auto">
+            <Card style={{ width: '25rem' }}>
+              <Card.Body>
+                <Form onSubmit={this.handleSubmit}>
+                  <Form.Group>
+                    <Card.Title>Login</Card.Title>
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                      name="email"
+                      placeholder="Email"
+                      onChange={this.handleChange} />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                      onChange={this.handleChange} />
+                    {this.state.error &&
+                      <Form.Text className="text-muted">
+                        {this.state.error}
+                      </Form.Text>
+                    }
+                  </Form.Group>
+                  <Button variant="outline-dark" type="submit">Login</Button>
+                </Form>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
     )
   }
 }
