@@ -2,6 +2,9 @@
 // resources: https://scotch.io/starters/react/adding-sass-to-create-react-app-applications, https://create-react-app.dev/docs/adding-bootstrap/#using-a-custom-theme
 
 body {
+  background-image: url('./assets/homepage2-01.png');
+  background-size: cover;
+  background-repeat: no-repeat;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
