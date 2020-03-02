@@ -70,6 +70,7 @@ class NearOffice extends React.Component {
     console.log(this.state.choiceText)
     return (
       <>
+      <header className="masthead intown-masthead">
       {!this.state.clicked &&
       <Container>
         <Row className="justify-content-md-center">
@@ -83,8 +84,8 @@ class NearOffice extends React.Component {
                   <p className="add-margin">The roadworks have left you no time to hang about before you need to check in at reception for the interview.</p>
                   <p className="add-margin bold-text">What do you do?</p>
                 </Card.Text>
-                <Button variant="secondary" className="btn btn-secondary add-margin" onClick={this.handleChoice}>Stop and help collect the papers.</Button>
-                <Button variant="secondary" className="btn btn-secondary add-margin" onClick={this.handleChoice}>Keep going- you can't be late.</Button>
+                <Button className="btn btn-light add-margin" onClick={this.handleChoice}>Stop and help collect the papers.</Button>
+                <Button className="btn btn-light add-margin" onClick={this.handleChoice}>Keep going- you can't be late.</Button>
               </Card.Body>
             </Card>
           </Col>
@@ -107,6 +108,7 @@ class NearOffice extends React.Component {
             <GoTwo
               score={this.state.score} />
           }
+          </header>
         </>
     )
   }

@@ -63,6 +63,7 @@ class RoadWorks extends React.Component {
   render() {
     return (
       <>
+      <header className="masthead homepage-masthead">
         {!this.state.clicked &&
           <Container>
             <Row className="justify-content-md-center">
@@ -75,8 +76,8 @@ class RoadWorks extends React.Component {
                       <p className="add-margin">You check your map on your phone and it suggests what looks like a shortcut...</p>
                       <p className="add-margin bold-text">Do you wait your turn to squish through the detour, or try the shortcut?</p>
                     </Card.Text>
-                    <Button variant="secondary" className="btn btn-secondary add-margin" onClick={this.handleChoice}>Take the shortcut.</Button>
-                    <Button variant="secondary" className="btn btn-secondary add-margin" onClick={this.handleChoice}>Follow the detour signs.</Button>
+                    <Button className="btn btn-light add-margin" onClick={this.handleChoice}>Take the shortcut.</Button>
+                    <Button className="btn btn-light add-margin" onClick={this.handleChoice}>Follow the detour signs.</Button>
                   </Card.Body>
                 </Card>
               </Col>
@@ -100,6 +101,7 @@ class RoadWorks extends React.Component {
               score={this.state.badScore} />
           }
         </>
+        </header>
       </>
     )
   }
