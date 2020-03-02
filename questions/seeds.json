@@ -1,28 +1,45 @@
 {
-  "question": "What is the value of b?",
-  "code_one": "let a = 10; let b = a; a = 0;",
-  "code_two": "",
-  "correct_answer": "10",
-  "incorrect_answers": ["0", "undefined", "NAN"]
+  "model": "questions.question",
+  "pk": 1,
+  "fields": {
+    "question": "What is the value of b?",
+    "code_one": "let a = 10; let b = a; a = 0;",
+    "code_two": null,
+    "correct_answer": "10",
+    "incorrect_answers": "[\"0\", \"undefined\", \"NAN\"]"
+  }
 },
 {
-  "question": 'In which case would the following display as equal to each other?',
-  "code_one": 'var a = "42"; var b = 42;',
-  "code_two": '',
-  "correct_answer": 'a == b',
-  incorrect_answers: ['a === b', 'a != b', 'they cannot be equal']
+  "model": "questions.question",
+  "pk": 2,
+  "fields": {
+    "question": "In which case would the following display as equal to each other?",
+    "code_one": "var a = \"42\"; var b = 42;",
+    "code_two": null,
+    "correct_answer": "a == b",
+    "incorrect_answers": "[\"a === b\", \"a != b\", \"they cannot be equal\"]"
+  }
 },
 {
-  "question": 'Are the followings comparisons true or false?',
-  "code_one": 'var a = [1, 2, 3]; var b = [1, 2, 3]; var c = "1, 2, 3";',
-  "code_two": 'a == c; b == c; a == b;',
-  "correct_answer": 'true, true, false',
-  "incorrect_answers": ['false, false, true', 'true, true, true', 'false, false, false']
+  "model": "questions.question",
+  "pk": 3,
+  "fields": {
+    "question": "Are the followings comparisons true or false?",
+    "code_one": "var a = [1, 2, 3]; var b = [1, 2, 3]; var c = \"1, 2, 3\";",
+    "code_two": "a == c; b == c; a == b;",
+    "correct_answer": "true, true, false",
+    "incorrect_answers": "[\"false false true\", \"true true true\", \"false false false\"]"
+  }
 },
 {
-  "question": 'What is logged from the following mapping',
-  "code_one": `const myArr = ['a', 'b', 'c']; const myMap = { a: 1, b: 2, c: 3 };`,
-  "code_two": `const result = myArr.map(letter => myMap[letter]); console.log(result);`,
-  "correct_answer": '[1, 2, 3]',
-  "incorrect_answers": ['1, 2, 3', 'a, b, c', `['a', 'b', 'c']`]
+  "model": "questions.question",
+  "pk": 4,
+  "fields": {
+    "question": "What is logged from the following map?",
+    "code_one": "`const myArr = ['a', 'b', 'c']; const myMap = { a: 1, b: 2, c: 3 }`;",
+    "code_two": "`const result = myArr.map(letter => myMap[letter]); console.log(result)`;",
+    "correct_answer": "[1, 2, 3]",
+    "incorrect_answers": "[\"1 2 3\", \"a b c\", \"`['a' 'b' 'c']`\"]"
+  }
 }
+]
