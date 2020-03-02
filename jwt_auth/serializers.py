@@ -32,13 +32,16 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'email', 'password', 'password_confirmation', 'username', 'location')
+        fields = '__all__'
 
-# class BusinessSerializer(serializers.ModelSerializer):
+class BusinessSerializer(serializers.ModelSerializer):
 
-#     class Meta:
-#       model = Business
-#       fields = '__all__' 
+    class Meta:
+        model = Business
+        fields = '__all__' 
+    
+class PopulatedUserSerializer(UserSerializer):
+    businesses = BusinessSerializer(many=True)
 
 # this serialiser is specifically for populating the owner info when someone leaves a comment on someone elses profile - needed to be different to the user serializer above!!
 # class OwnerSerializer(serializers.ModelSerializer):

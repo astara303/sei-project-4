@@ -86,38 +86,3 @@ class UserProfileView(APIView):
             return Response(status=HTTP_204_NO_CONTENT)
         except User.DoesNotExist:
             return Response({'message': 'Not Found'}, status=HTTP_404_NOT_FOUND)
-        
-# class CommentListView(APIView):
-
-#     def post(self, request, pk):
-#         request.data['user'] = pk
-#         request.data['owner'] = request.user.id
-#         print(request.user)
-#         comment = CommentSerializer(data=request.data)
-#         # print(comment.is_valid())
-#         if comment.is_valid():
-#           comment.save()  # save the comment
-#           # find the user the comment was just saved on
-#           # print(comment.data)
-#           profile = Profile.objects.get(pk=pk)
-#           # print(user)
-#           # populate that user with the new comment
-#           serialized_user = PopulatedProfileSerializer(profile)
-#           print(serialized_user)
-#           # return the response to the user with 201 status
-#           # print(serialized_user.data)
-#           return Response(serialized_user.data, status=HTTP_201_CREATED)
-#         return Response(comment.errors, status=HTTP_422_UNPROCESSABLE_ENTITY)
-
-# class CommentDetailView(APIView):
-
-#     def delete(self, request, **kwargs):
-
-#         try:
-#             comment = Comment.objects.get(pk=kwargs['comment_pk'])
-#             if comment.owner.id != request.user.id:
-#               return Response(status=HTTP_401_UNAUTHORIZED)
-#             comment.delete()
-#             return Response(status=HTTP_204_NO_CONTENT)
-#         except Comment.DoesNotExist:
-#             return Response({'message': 'Not Found'}, status=HTTP_404_NOT_FOUND)

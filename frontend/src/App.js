@@ -11,10 +11,9 @@ import Login from './components/auth/Login'
 import WakeUp from './components/story/WakeUp'
 import InTown from './components/story/InTown'
 import RoadWorks from './components/story/RoadWorks'
-import HelpOne from './components/story/HelpOne'
-import HelpTwo from './components/story/HelpTwo'
-import GoOne from './components/story/GoOne'
-import GoTwo from './components/story/GoTwo'
+import UserShow from './components/common/UserShow'
+import UserIndex from './components/common/UserIndex'
+import Profile from './components/common/Profile'
 
 const App = () => (
   <BrowserRouter>
@@ -25,10 +24,9 @@ const App = () => (
         <Route path="/wakeup" component={WakeUp} />
         <Route path="/intown" component={InTown} />
         <Route path="/roadworks" component={RoadWorks} />
-        <Route path="/helpone" component={HelpOne} />
-        <Route path="/helptwo" component={HelpTwo} />
-        <Route path="/goone" component={GoOne} />
-        <Route path="/gotwo" component={GoTwo} />
+        <Route path="/interviewers/:id" component={UserShow}/>
+        <Route path="/interviewers" component={UserIndex} />
+        <Route path="/profile/:id" component={Profile} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
       </Switch>
