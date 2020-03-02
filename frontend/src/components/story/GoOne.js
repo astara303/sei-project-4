@@ -34,11 +34,11 @@ class GoOne extends React.Component {
             <Col md="auto">
                 <Card style={{ width: '35rem' }}>
                   <Card.Body>
-                    <Card.Title>This is the page for a positive result for being on time.</Card.Title>
+                    <Card.Title className="small-title">This is the page for a positive result for being on time.</Card.Title>
                     <Card.Text><p>There will be story text here</p>
                     </Card.Text>
                     <div>
-                      <Button variant="dark" onClick={this.handleClick}>Continue</Button>
+                      <Button variant="secondary" className="btn btn-secondary" onClick={this.handleClick}>Continue</Button>
                     </div>
                   </Card.Body>
                 </Card>

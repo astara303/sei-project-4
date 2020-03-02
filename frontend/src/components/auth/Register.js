@@ -78,19 +78,19 @@ class Register extends React.Component {
                       onChange={this.handleChange}
                     />
                   </Form.Group>
-                  <Form.Group>
+                  {/* <Form.Group>
                     <Form.Label>Image</Form.Label>
                     <Form.Control
                       placeholder="Image"
                       name="profile_image"
                       onChange={this.handleChange}
-                    />
-                    {this.state.error &&
+                    /> */}
+                    {/* {this.state.error &&
                       <Form.Text className="text-muted">
                         {this.state.error}
                       </Form.Text>
                     }
-                  </Form.Group>
+                  </Form.Group> */}
                   <Button variant="outline-dark" type="submit">Register Me</Button>
                 </Form>
               </Card.Body>

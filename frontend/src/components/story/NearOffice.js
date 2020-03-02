@@ -74,17 +74,17 @@ class NearOffice extends React.Component {
       <Container>
         <Row className="justify-content-md-center">
           <Col md="auto">
-            <Card style={{ width: '35rem' }}>
+            <Card style={{ width: '36rem' }}>
               <Card.Body>
-                <Card.Title>After all that, you've made it to the offices.</Card.Title>
+                <Card.Title className="small-title">After all that, you've made it to the offices.</Card.Title>
                 <Card.Text>
-                  <p>{this.state.choiceText}</p>
-                  <p>As you turn a corner, you see someone drop a stack of papers that all blow off in different directions.</p>
-                  <p>The roadworks have left you no time to hang about before you need to check in at reception for the interview.</p>
-                  <p>What do you do?</p>
+                  <p className="add-margin">{this.state.choiceText}</p>
+                  <p className="add-margin">As you turn a corner, you see someone drop a stack of papers that all blow off in different directions.</p>
+                  <p className="add-margin">The roadworks have left you no time to hang about before you need to check in at reception for the interview.</p>
+                  <p className="add-margin bold-text">What do you do?</p>
                 </Card.Text>
-                <Button variant="outline-dark" onClick={this.handleChoice}>Stop and help collect the papers.</Button>
-                <Button variant="outline-dark" onClick={this.handleChoice}>Keep going- you can't be late.</Button>
+                <Button variant="secondary" className="btn btn-secondary add-margin" onClick={this.handleChoice}>Stop and help collect the papers.</Button>
+                <Button variant="secondary" className="btn btn-secondary add-margin" onClick={this.handleChoice}>Keep going- you can't be late.</Button>
               </Card.Body>
             </Card>
           </Col>

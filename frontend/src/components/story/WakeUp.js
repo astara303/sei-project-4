@@ -42,7 +42,7 @@ class WakeUp extends React.Component {
       <Container>
         <Row className="justify-content-md-center">
           <Col md="auto">
-            <Card style={{ width: '70rem' }}>
+            <Card style={{ width: '60rem' }}>
               <Card.Body>
                 <Card.Title className="small-title">Wake up.</Card.Title>
                 <Card.Text>

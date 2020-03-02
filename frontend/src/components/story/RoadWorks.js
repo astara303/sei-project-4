@@ -17,7 +17,7 @@ class RoadWorks extends React.Component {
     badScore: 0,
     clicked: false,
     goodText: 'Success! The path you chose didn\'t save you any time, but you didn\'t lose any either.',
-    detourBadText: 'You wait for your turn to push in between everyone, and make your way down the road. With one eye on your gps, you see that you passed your turn long ago but there is nowhere to escape this fencing! You continue along the detour until finally you arrive on the other side of the roadworks. You cross the street and are not sure how long it will take you to back-track. Eventually you near the offices, but not without breaking a sweat first.',
+    detourBadText: 'You wait for your turn to push in between everyone, and make your way down the road. With one eye on your gaps, you see that you passed your turn long ago but there is nowhere to escape this fencing! You continue along the detour until finally you arrive on the other side of the roadworks. You cross the street and are not sure how long it will take you to back-track. Eventually you near the offices, but not without breaking a sweat first.',
     shortcutBadText: 'You escape the throng of people making their way through the detour and head off along your shortcut. You arrive at a building that looks very... building-y, considering your phone is telling you that a road passes through here. Unsure if you missed a tunnel somewhere, you check your surroundings for any clue. You\'re losing time and there\'s no way to access this shortcut that you can see so you head back to the roadworks and take the detour, but not without breaking a sweat first.'
   }
 
@@ -67,16 +67,16 @@ class RoadWorks extends React.Component {
           <Container>
             <Row className="justify-content-md-center">
               <Col md="auto">
-                <Card style={{ width: '35rem' }}>
+                <Card style={{ width: '36rem' }}>
                   <Card.Body>
-                    <Card.Title>There are roadworks blocking you from crossing the road.</Card.Title>
+                    <Card.Title className="small-title">There are roadworks blocking you from crossing the road.</Card.Title>
                     <Card.Text>
-                      <p>There isn't another crossing anywhere in sight. There are signs for a detour, and you can see masses of people trying to squish through the narrow, fenced-in path.</p>
-                      <p>You check your map on your phone and it suggests what looks like a shortcut...</p>
-                      <p>Do you wait your turn to squish through the detour, or try the shortcut?</p>
+                      <p className="add-margin">There isn't another crossing anywhere in sight. There are signs for a detour, and you can see masses of people trying to squish through the narrow, fenced-in path.</p>
+                      <p className="add-margin">You check your map on your phone and it suggests what looks like a shortcut...</p>
+                      <p className="add-margin bold-text">Do you wait your turn to squish through the detour, or try the shortcut?</p>
                     </Card.Text>
-                    <Button variant="outline-dark" onClick={this.handleChoice}>Take the shortcut.</Button>
-                    <Button variant="outline-dark" onClick={this.handleChoice}>Follow the detour signs.</Button>
+                    <Button variant="secondary" className="btn btn-secondary add-margin" onClick={this.handleChoice}>Take the shortcut.</Button>
+                    <Button variant="secondary" className="btn btn-secondary add-margin" onClick={this.handleChoice}>Follow the detour signs.</Button>
                   </Card.Body>
                 </Card>
               </Col>

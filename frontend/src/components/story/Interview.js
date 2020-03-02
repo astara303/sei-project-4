@@ -116,7 +116,7 @@ class Interview extends React.Component {
               <Col md="auto">
                 <Card style={{ width: '40rem' }}>
                   <Card.Body>
-                    <Card.Title>This is the interview page.</Card.Title>
+                    <Card.Title className="small-title">This is the interview page.</Card.Title>
                     <Card.Text>
                       <p>{this.state.questionObj.question}</p>
                       <hr />
@@ -127,14 +127,14 @@ class Interview extends React.Component {
                     </Card.Text>
                     <hr />
                     {this.state.combinedAnswers && this.state.combinedAnswers.map(answer => (
-                      <Button variant="outline-dark" onClick={this.handleGuess} key={answer}>{answer}</Button>
+                      <Button variant="secondary" className="btn btn-secondary add-margin" onClick={this.handleGuess} key={answer}>{answer}</Button>
                     ))}
                     {this.state.playerGuess &&
                   <>
                     <div>
                       <p>{this.state.playerGuess}</p>
                     </div>
-                    <Button variant="dark" onClick={this.handleNext}>Next</Button>
+                    <Button variant="outline-dark" onClick={this.handleNext}>Next</Button>
                   </>
                 }
                   </Card.Body>

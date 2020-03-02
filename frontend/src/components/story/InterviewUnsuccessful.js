@@ -16,7 +16,7 @@ class InterviewUnsuccessful extends React.Component {
         <Col md="auto">
           <Card style={{ width: '35rem' }}>
             <Card.Body>
-              <Card.Title>Interview was unsuccessful...</Card.Title>
+              <Card.Title className="small-title">Interview was unsuccessful...</Card.Title>
               <Card.Text><p>There will be story text here</p>
               </Card.Text>
             </Card.Body>

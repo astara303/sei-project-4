@@ -38,9 +38,9 @@ class InTown extends React.Component {
       <Container>
         <Row className="justify-content-md-center">
           <Col md="auto">
-            <Card style={{ width: '35rem' }}>
+            <Card style={{ width: '60rem' }}>
               <Card.Body>
-                <Card.Title>Nearly Interview Time.</Card.Title>
+                <Card.Title className="small-title">Nearly Interview Time.</Card.Title>
                 <Card.Text>
                   <p>You journey into town and arrive near to the offices where your interview will be held.</p>
                   <p>You mentally trace over code you’ve written, wondering what they will ask you about.</p>
@@ -50,11 +50,11 @@ class InTown extends React.Component {
                   <p>Data types?</p>
                   <p>Recursion?</p>
                   <p>You feel yourself going in circles, so you pop into the nearest cafe to clear your mind.</p>
-                  <p>What do you choose to drink?</p>
+                  <p><span className="bold-text">What do you choose to drink?</span></p>
                 </Card.Text>
                 {this.state.clicked &&
                   <div>
-                    <Link to={'/roadworks'}><Button variant="outline-dark">Feeling a bit perked up, you leave the cafe and continue towards the office.</Button></Link>
+                    <Link to={'/roadworks'}><Button className="btn btn-secondary">Feeling a bit perked up, you leave the cafe and continue towards the office.</Button></Link>
                   </div>
                 }
                 <br />
@@ -62,7 +62,7 @@ class InTown extends React.Component {
                   {this.state.businesses.map(business => {
                     return <div key={business.name}>
                       <Col md="auto">
-                        <button onClick={this.handleClick}><img src={business.image} alt={business.name} height="225" width="225" /></button>
+                        <button className="no-border" onClick={this.handleClick}><img src={business.image} alt={business.name} height="200" width="200" /></button>
                       </Col>
                     </div>
                   })
