@@ -20,10 +20,20 @@ class UserShow extends React.Component {
 
   render() {
     console.log('id', this.props.match.params.id)
+    const { user } = this.state
+    if (!user.businesses) return null
     return (
       <div>
         <h1>This is the show page for a user.</h1>
-        <p>This is {this.state.user.username}'s profile page</p>
+        <p>This is {user.username}'s profile page</p>
+        <div>Their businesses are {user.businesses.map(business => 
+        <>
+        <p key={business.name}>{business.name}</p>
+        <p key={business.category}>{business.category}</p>
+        <img key={business.name} src={business.image} alt={business.name} />
+        </>
+        )}
+        </div>
       </div>
     )
   }

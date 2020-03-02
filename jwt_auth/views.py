@@ -9,7 +9,7 @@ from django.contrib.auth import get_user_model
 from django.conf import settings
 import jwt 
 
-from .serializers import UserSerializer 
+from .serializers import UserSerializer, PopulatedUserSerializer
 User = get_user_model()
 
 # Creating the register function - checks if the request data sent from user is all valid and saves if so
@@ -61,7 +61,7 @@ class UserProfileView(APIView):
 
         try:
             user = User.objects.get(pk=pk)
-            serialized_user = UserSerializer(user)
+            serialized_user = PopulatedUserSerializer(user)
             return Response(serialized_user.data)
         except User.DoesNotExist:
             return Response({'message': 'Not Found'}, status=HTTP_404_NOT_FOUND)

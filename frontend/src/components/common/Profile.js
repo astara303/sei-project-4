@@ -35,7 +35,10 @@ class Profile extends React.Component {
     // console.log(this.state.secondBusiness)
     console.log(this.state.user)
     return (
+      <>
       <h1>This is {this.state.user.username}'s profile page</h1>
+      {/* <h2>My businesses are {this.state.user.businesses.name}</h2> */}
+      </>
     )
   }
 
