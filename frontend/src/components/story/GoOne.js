@@ -27,6 +27,7 @@ class GoOne extends React.Component {
     console.log(this.state.score)
     return (
       <>
+      <header class="goone-masthead">
       {!this.state.interview &&
         <Container>
           <Row className="justify-content-md-center">
@@ -48,6 +49,7 @@ class GoOne extends React.Component {
       {this.state.interview &&
           <Interview score={this.state.score} />
         }
+        </header>
       </>
     )
   }

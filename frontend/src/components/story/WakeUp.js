@@ -44,12 +44,13 @@ class WakeUp extends React.Component {
 
   render() {
     return (
+      <header class="wakeup-masthead masthead">
       <Container>
         <Row className="justify-content-md-center">
           <Col md="auto">
-            <Card style={{ width: '35rem' }}>
+            <Card style={{ width: '70rem' }}>
               <Card.Body>
-                <Card.Title>Wake up.</Card.Title>
+                <Card.Title className="small-title">Wake up.</Card.Title>
                 <Card.Text>
                   <p>Today's the day. It’s the morning of your interview. </p>
                   <p>What time is it? You check the clock. Two minutes until your alarm goes off. </p>
@@ -64,31 +65,32 @@ class WakeUp extends React.Component {
                   <p>You remember that you are taking a step towards a career that you are passionate about.</p>
                   <p>You know your developer skills are valuable and you’re excited to show someone what you can do.</p>
                   <p>You’ve got this!</p>
-                  <p>After showering, it’s time to grab the outfit you planned the night before:</p>
-                </Card.Text>
+                  <p>After showering, <span className="bold-text">it’s time to grab the outfit you planned the night before:</span></p>
                 <div>
                   {this.state.clicked &&
                     <div>
-                      <Link to={'/intown'}><Button variant="outline-dark">You have some breakfast and hit the road.</Button></Link>
+                      <Link to={'/intown'}><Button className="btn btn-secondary">You have some breakfast and hit the road.</Button></Link>
                     </div>
                   }
                 </div>
-                <br />
+                  <br />
+                </Card.Text>
                   <Row className="justify-content-md-center">
                     {this.state.businesses.map(business => {
                       return <div key={business.name}>
                         <Col md="auto">
-                          <button onClick={this.handleClick}><img src={business.image} alt={business.name} height="225" width="225" /></button>
+                          <button className="no-border" onClick={this.handleClick}><img src={business.image} alt={business.name} height="200" width="200" /></button>
                         </Col>
                       </div>
                     })
-                    }
+                  }
                   </Row>
               </Card.Body>
             </Card>
           </Col>
         </Row>
       </Container>
+      </header>
     )
   }
 }

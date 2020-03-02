@@ -27,12 +27,14 @@ class Navigation extends React.Component {
 
   render() {
     return (
-      <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="/">Home</Navbar.Brand>
+      <Navbar bg="" variant="light">
         <Nav className="mr-auto">
+        <Nav.Link href="/">Home</Nav.Link>
           {Auth.isAuthenticated() && <Nav.Link href="/wakeup">Story</Nav.Link>}
           {!Auth.isAuthenticated() && <Nav.Link href="/register">Register</Nav.Link>}
           {!Auth.isAuthenticated() && <Nav.Link href="/login">Login</Nav.Link>}
+        </Nav>
+        <Nav className="mr-sm-2">
           {Auth.isAuthenticated() && <Button onClick={this.handleLogout} variant="outline-secondary">Logout</Button>}
         </Nav>
       </Navbar>
