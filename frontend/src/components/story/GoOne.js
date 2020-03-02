@@ -9,7 +9,7 @@ import Interview from './Interview'
 
 class GoOne extends React.Component {
   state = {
-    score: 1,
+    score: this.props.score,
     interview: false
   }
 

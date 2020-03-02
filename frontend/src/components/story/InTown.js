@@ -33,11 +33,6 @@ class InTown extends React.Component {
     this.setState({ clicked })
   }
 
-  /* styling:
-  should the ad "button" be a clickable card?
-  put ad buttons in columns, they all show vertically atm
-  */
-
   render() {
     return (
       <Container>
@@ -59,7 +54,7 @@ class InTown extends React.Component {
                 </Card.Text>
                 {this.state.clicked &&
                   <div>
-                    <Link to={'/nearoffice'}><Button variant="outline-dark">Feeling a bit perked up, you leave the cafe and continue towards the office.</Button></Link>
+                    <Link to={'/roadworks'}><Button variant="outline-dark">Feeling a bit perked up, you leave the cafe and continue towards the office.</Button></Link>
                   </div>
                 }
                 <br />

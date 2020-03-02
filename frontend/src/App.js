@@ -10,7 +10,7 @@ import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 import WakeUp from './components/story/WakeUp'
 import InTown from './components/story/InTown'
-import NearOffice from './components/story/NearOffice'
+import RoadWorks from './components/story/RoadWorks'
 import HelpOne from './components/story/HelpOne'
 import HelpTwo from './components/story/HelpTwo'
 import GoOne from './components/story/GoOne'
@@ -24,7 +24,7 @@ const App = () => (
         <Route exact path="/" component={Home} />
         <Route path="/wakeup" component={WakeUp} />
         <Route path="/intown" component={InTown} />
-        <Route path="/nearoffice" component={NearOffice} />
+        <Route path="/roadworks" component={RoadWorks} />
         <Route path="/helpone" component={HelpOne} />
         <Route path="/helptwo" component={HelpTwo} />
         <Route path="/goone" component={GoOne} />

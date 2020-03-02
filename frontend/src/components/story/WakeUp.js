@@ -26,7 +26,6 @@ class WakeUp extends React.Component {
 
   //an event handler that knows an option has been clicked. When it has, display the continue button
   //should the user be able to update their answer? I think we would have to: store it in state, and post the answer when they click continue.
-  //Instead of state holding true/false, it will hold the business model object. Would need to connect that to each button
   handleClick = () => {
     let clicked = this.state.clicked
     if (clicked === false) {
@@ -36,11 +35,6 @@ class WakeUp extends React.Component {
     }
     this.setState({ clicked })
   }
-
-  /* styling:
-  should the ad "button" be a clickable card?
-  put ad buttons in columns, they all show vertically atm
-  */
 
   render() {
     return (

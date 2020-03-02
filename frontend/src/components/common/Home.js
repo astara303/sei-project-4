@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 
 import Auth from '../../lib/auth'
 
-//show register prompt if not regsitered/logged in
+//show register prompt if not regsitered/logged in: need register/login link buttons
 //show 'begin your story' button if you are > look at quiz homepage 
 
 const Home = () => (

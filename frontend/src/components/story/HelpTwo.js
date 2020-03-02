@@ -9,7 +9,7 @@ import Interview from './Interview'
 
 class HelpTwo extends React.Component {
   state = {
-    score: 0,
+    score: this.props.score,
     interview: false
   }
 
