@@ -8,9 +8,9 @@ import Button from 'react-bootstrap/Button'
 
 class UserShow extends React.Component {
   state = {
-    user: []
-    // firstBusiness: {},
-    // secondBusiness: {}
+    user: [],
+    firstBusiness: {},
+    secondBusiness: {}
   }
 
   async componentDidMount() {
@@ -21,6 +21,17 @@ class UserShow extends React.Component {
     } catch (err) {
       this.props.history.push('/notfound')
     }
+    this.getBusinesses()
+  }
+
+  getBusinesses = async () => {
+    try {
+      const firstBusiness = await axios.get(`/api/businesses/${this.state.user.businesses[0]}`)
+      const secondBusiness = await axios.get(`/api/businesses/${this.state.user.businesses[1]}`)
+      this.setState({ firstBusiness: firstBusiness.data, secondBusiness: secondBusiness.data })
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   render() {
@@ -28,6 +39,7 @@ class UserShow extends React.Component {
     // console.log(this.state.user.looking_for_work)
     const { user } = this.state
     if (!user.businesses) return null
+    console.log('businesses', this.state.user.businesses)
     return (
       <Container className="test-border">
         <Row className="add-margin-more">
@@ -45,24 +57,31 @@ class UserShow extends React.Component {
         </Row>
 
         <h1 className="small-title">Chosen Businesses:</h1>
-        <Row className="justify-content-md-center">
-          {user.businesses.map(business =>
-            <div key={business.name}>
-              <Col md="auto">
-                <Card style={{ width: '18rem' }}>
-                  <Card.Img className="business-image" variant="toptop" src={business.image} alt={business.name} />
-                  <Card.Body>
-                    <Card.Title>{business.name}</Card.Title>
-                    <Card.Text>{business.category}</Card.Text>
+        <Row className="justify-content-md-center test-border">
 
-                  </Card.Body>
-                </Card>
-              </Col>
-            </div>
-          )}
+          <Col md="auto">
+            <Card style={{ width: '18rem' }}>
+              <Card.Img className="business-image" variant="toptop" src={this.state.firstBusiness.image} alt={this.state.firstBusiness.name} />
+              <Card.Body>
+                <Card.Title>{this.state.firstBusiness.name}</Card.Title>
+                <Card.Text>{this.state.firstBusiness.category}</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+
+
+          <Col md="auto">
+            <Card style={{ width: '18rem' }}>
+              <Card.Img className="business-image" variant="toptop" src={this.state.secondBusiness.image} alt={this.state.secondBusiness.name} />
+              <Card.Body>
+                <Card.Title>{this.state.secondBusiness.name}</Card.Title>
+                <Card.Text>{this.state.secondBusiness.category}</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+
         </Row>
       </Container>
-
 
     )
   }

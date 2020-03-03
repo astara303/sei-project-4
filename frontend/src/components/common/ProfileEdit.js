@@ -50,7 +50,7 @@ class ProfileEdit extends React.Component {
     console.log(this.state.data)
     try {
       console.log('handle submit')
-      const res = await axios.put(`/api/users/${payload}/edit`, { ...this.state.data }, {
+      const res = await axios.patch(`/api/users/${payload}/edit`, { ...this.state.data }, {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
       this.props.history.push(`/profile/${payload}`)

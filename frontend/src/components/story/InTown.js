@@ -55,7 +55,7 @@ class InTown extends React.Component {
       await axios.patch(`api/users/${payload}/`, {...this.state.user}, {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
-      // this.props.history.push('/roadworks')
+      this.props.history.push('/roadworks')
     } catch (err) {
       console.log(err)
     }
