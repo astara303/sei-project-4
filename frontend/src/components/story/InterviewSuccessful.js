@@ -28,16 +28,17 @@ class InterviewSuccessful extends React.Component {
   render() {
     if (!this.state.user) return null
     return (
-      <header className="homepage-masthead masthead">
+      // correct background
+      <header className="interview2-masthead masthead extra-masthead">
       <Container>
         <Row className="justify-content-md-center">
           <Col md="auto">
-            <Card style={{ width: '35rem' }}>
+            <Card style={{ width: '50rem' }}>
               <Card.Body>
                 <Card.Title className="small-title">It's been a few days since the interview.</Card.Title>
                 <Card.Text>
                   <p className="add-margin">Your phone rings. You answer. A familiar voice is on the other end.</p>
-                  <p className="add-margin">"Hello, is this {this.state.user.username}?"</p>
+                  <p className="add-margin">"Hello, is this {this.state.user.first_name}?"</p>
                   <p className="add-margin">"Yes, it is."</p>
                   <p className="add-margin">"Hello there! I wanted to thank you so much for interviewing with our company. We really enjoyed meeting you-"</p>
                   <p className="add-margin">Your heart doesn't know whether to fly or sink. Is this a gentle let down or are they setting you up for good news?</p>

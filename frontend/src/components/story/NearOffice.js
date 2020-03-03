@@ -70,7 +70,8 @@ class NearOffice extends React.Component {
     console.log(this.state.choiceText)
     return (
       <>
-      <header className="masthead intown-masthead">
+      {/* correct background */}
+      <header className="masthead nearoffice-masthead extra-masthead">
       {!this.state.clicked &&
       <Container>
         <Row className="justify-content-md-center">

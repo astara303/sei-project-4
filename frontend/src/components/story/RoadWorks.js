@@ -63,7 +63,8 @@ class RoadWorks extends React.Component {
   render() {
     return (
       <>
-      <header className="masthead homepage-masthead">
+      {/* correct background */}
+      <header className="masthead roadworks-masthead">
         {!this.state.clicked &&
           <Container>
             <Row className="justify-content-md-center">

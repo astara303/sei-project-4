@@ -110,7 +110,8 @@ class Interview extends React.Component {
   render() {
     return (
       <>
-      <header className="masthead homepage-masthead">
+      {/* correct background */}
+      <header className="masthead interview-masthead">
         {!this.state.endInterview &&
           <Container>
             <Row className="justify-content-md-center">

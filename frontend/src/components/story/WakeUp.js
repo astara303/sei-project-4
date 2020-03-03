@@ -71,35 +71,35 @@ class WakeUp extends React.Component {
     if (!this.state.user) return null
     console.log(this.state.user)
     return (
-      <header className="wakeup-masthead masthead">
+      // correct background
+      <header className="wakeup-masthead masthead extra-masthead">
       <Container>
         <Row className="justify-content-md-center">
           <Col md="auto">
             <Card style={{ width: '60rem' }}>
               <Card.Body>
                 <Card.Title className="small-title">Wake up.</Card.Title>
-                <Card.Text>
-                  <p className="add-margin">Today's the day. It’s the morning of your interview.</p> 
-                  <p className="add-margin">What time is it? You check the clock. Two minutes until your alarm goes off. </p> 
-                  <p className="add-margin">You close your eyes and try to relax, but so many thoughts begin banging around inside your skull.</p> 
-                  <p className="add-margin">Today could change your life.</p> 
-                  <p className="add-margin">What if you get this job? It’s your dream to work for a company like this.</p> 
-                  <p className="add-margin">What if you blow it?</p> 
-                  <p className="add-margin">Will you get along with the interviewer?</p> 
-                  <p className="add-margin">What if you can’t come up with the right answer? What will you do?</p> 
-                  <p className="add-margin">Your alarm goes off.</p> 
-                  <p className="add-margin">You remind yourself how far you’ve come.</p> 
-                  <p className="add-margin">You remember that you are taking a step towards a career that you are passionate about.</p> 
-                  <p className="add-margin">You know your developer skills are valuable and you’re excited to show someone what you can do.</p> 
-                  <p className="add-margin">You’ve got this!</p> 
-                  After showering, it’s time to <span className="bold-text">grab the outfit you planned the night before:</span>
-                  <br />
+                  <Card.Text>Today's the day. It’s the morning of your interview.</Card.Text>
+                  <Card.Text>What time is it? You check the clock. Two minutes until your alarm goes off. </Card.Text> 
+                  <Card.Text>You close your eyes and try to relax, but so many thoughts begin banging around inside your skull.</Card.Text> 
+                  <Card.Text>Today could change your life.</Card.Text> 
+                  <Card.Text>What if you get this job? It’s your dream to work for a company like this.</Card.Text> 
+                  <Card.Text>What if you blow it?</Card.Text> 
+                  <Card.Text>Will you get along with the interviewer?</Card.Text> 
+                  <Card.Text>What if you can’t come up with the right answer? What will you do?</Card.Text> 
+                  <Card.Text>Your alarm goes off.</Card.Text> 
+                  <Card.Text>You remind yourself how far you’ve come.</Card.Text> 
+                  <Card.Text>You remember that you are taking a step towards a career that you are passionate about.</Card.Text> 
+                  <Card.Text>You know your developer skills are valuable and you’re excited to show someone what you can do.</Card.Text> 
+                  <Card.Text>You’ve got this!</Card.Text> 
+                  <Card.Text>After showering, it’s time to <span className="bold-text">grab the outfit you planned the night before:</span></Card.Text>
                   {this.state.clicked &&
                     <div>
+                    <br />
                       <Button onClick={this.handleSubmit} className="btn btn-light">You have some breakfast and hit the road.</Button>
                     </div>
                   }
-                </Card.Text>
+                  <br />
                   <Row className="justify-content-md-center">
                     {this.state.businesses.map((business, i) => {
                       return <div key={business.name}>

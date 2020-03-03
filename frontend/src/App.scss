@@ -19,7 +19,13 @@ body {
   min-height: 500px;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
+}
+
+// this is to make the longer pages have background image to the bottom
+.extra-masthead {
+  height: 100%;
+  overflow: hidden;
 }
 
 .homepage-masthead {
@@ -27,48 +33,44 @@ body {
 }
 
 .wakeup-masthead {
-  background-image: url('./assets/wakeup2-01.png');
+  background-image: url('./assets/wakeup3-01.png');
 }
 
 .intown-masthead {
-  background-image: url('./assets/cafe-01.png');
+  background-image: url('./assets/cafe2-01.png');
 }
 
-// .roadworks-masthead {
-//   background-image: url();
-// }
+.roadworks-masthead {
+  background-image: url('./assets/roadworks-01.png');
+}
 
-// .nearoffice-masthead {
-//   background-image: url();
-// }
+.nearoffice-masthead {
+  background-image: url('./assets/paper-01-01.png');
+}
 
 // .goone-masthead {
 //   background-image: url()
 // }
 
-// .gotwo-masthead {
-//   background-image: url()
-// }
+.gotwo-masthead {
+  background-image: url('./assets/gotwo-01.png')
+}
 
-// .helpone-masthead {
-//   background-image: url()
-// }
+.helpone-masthead {
+  background-image: url('./assets/helpone-01.png')
+}
 
-// .helptwo-masthead {
-//   background-image: url()
-// }
+.helptwo-masthead {
+  background-image: url('./assets/helptwo-01.png')
+}
 
-// .interview-masthead {
-//   background-image: url()
-// }
+.interview-masthead {
+  background-image: url('./assets/interview-01.png')
+}
 
-// .interviewsuccess-masthead {
-//   background-image: url()
-// }
-
-// .interviewunsuccess-masthead {
-//   background-image: url()
-// }
+.interview2-masthead {
+  background-image: url('./assets/endinterview-01.png')
+}
 
 .card {
   background-color: transparent;
@@ -120,8 +122,8 @@ p {
 }
 
 .bold-text {
-  // font-weight: 900;
-  text-decoration: underline;
+  font-weight: bolder;
+  font-style: italic;
 }
 
 .no-border {

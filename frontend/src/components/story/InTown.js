@@ -63,6 +63,7 @@ class InTown extends React.Component {
 
   render() {
     console.log(this.state.user)
+    // correct background
     return (
       <header className="intown-masthead masthead">
       <Container>
@@ -71,20 +72,19 @@ class InTown extends React.Component {
             <Card style={{ width: '60rem' }}>
               <Card.Body>
                 <Card.Title className="small-title">Nearly Interview Time.</Card.Title>
-                <Card.Text>
-                  <p className="add-margin">You journey into town and arrive near to the offices where your interview will be held.</p>
-                  <p className="add-margin">You mentally trace over code you’ve written, wondering what they will ask you about.</p>
-                  <p className="add-margin">Maybe about that function you wrote that builds a grid?</p>
-                  <p className="add-margin">Maybe about that button that animates little hearts when you click it?</p>
-                  <p className="add-margin">Recursion?</p>
-                  <p className="add-margin">Data types?</p>
-                  <p className="add-margin">Recursion?</p>
-                  <p className="add-margin">You feel yourself going in circles, so you pop into the nearest cafe to clear your mind.</p>
+                  <Card.Text>You journey into town and arrive near to the offices where your interview will be held.</Card.Text>
+                  <Card.Text>You mentally trace over code you’ve written, wondering what they will ask you about.</Card.Text>
+                  <Card.Text>Maybe about that function you wrote that builds a grid?</Card.Text>
+                  <Card.Text>Maybe about that button that animates little hearts when you click it?</Card.Text>
+                  <Card.Text className="add-margin">Recursion?</Card.Text>
+                  <Card.Text className="add-margin">Data types?</Card.Text>
+                  <Card.Text className="add-margin">Recursion?</Card.Text>
+                  <Card.Text>You feel yourself going in circles, so you pop into the nearest cafe to clear your mind.</Card.Text>
                   <br />
-                  <p className="add-margin"><span className="bold-text">What do you choose to drink?</span></p>
-                </Card.Text>
+                  <Card.Text><span className="bold-text">What do you choose to drink?</span></Card.Text>
                 {this.state.clicked &&
                   <div>
+                    <br />
                     <Button onClick={this.handleSubmit} className="btn btn-light">Feeling a bit perked up, you leave the cafe and continue towards the office.</Button>
                   </div>
                 }
