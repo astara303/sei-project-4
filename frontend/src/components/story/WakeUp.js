@@ -38,7 +38,7 @@ class WakeUp extends React.Component {
 
   render() {
     return (
-      <header class="wakeup-masthead masthead">
+      <header className="wakeup-masthead masthead">
       <Container>
         <Row className="justify-content-md-center">
           <Col md="auto">

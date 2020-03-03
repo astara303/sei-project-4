@@ -33,11 +33,15 @@ class Profile extends React.Component {
   render() {
     // console.log(this.state.firstBusiness)
     // console.log(this.state.secondBusiness)
-    console.log(this.state.user)
+    const { user } = this.state
+    if (!user.businesses) return null
     return (
       <>
-      <h1>This is {this.state.user.username}'s profile page</h1>
-      {/* <h2>My businesses are {this.state.user.businesses.name}</h2> */}
+      <h1>This is {user.username}'s profile page</h1>
+      <div>Their businesses are {user.businesses.map(business => 
+        <p key={business.id}>{business.name}</p>
+      )}
+      </div>
       </>
     )
   }

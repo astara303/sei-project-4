@@ -1,5 +1,8 @@
 import React from 'react'
 import axios from 'axios'
+import Container from 'react-bootstrap/Container'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
 
 import UserCard from './UserCard'
 
@@ -20,11 +23,15 @@ class UserIndex extends React.Component {
   render() {
     // console.log(this.state.users)
     return (
-      <div>
+      <Container>
+        <Row className="">
+
         {this.state.users.map(user => (
               <UserCard key={user.id} {...user} />
             ))}
-      </div>
+            
+        </Row>
+      </Container>
     )
   }
 
