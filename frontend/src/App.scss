@@ -88,14 +88,35 @@ body {
 }
 
 p {
-margin: 5px;
-padding: 0;
-color: #7372FF;
-font-weight: bold;
+  margin: 5px;
+  padding: 0;
+  color: #7372FF;
+  font-weight: bold;
+}
+
+.test-border {
+  border: 2px solid red;
+}
+
+.profile-image {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.business-image {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
 }
 
 .add-margin {
   margin: 15px;
+}
+
+.add-margin-more {
+  margin: 25px;
 }
 
 .bold-text {
