@@ -44,7 +44,7 @@ class WakeUp extends React.Component {
       clicked = true
       const chosenBusiness = this.state.businesses[id]
       const user = { ...this.state.user, businesses: [chosenBusiness.id]}
-      console.log(user)
+      // console.log(user)
       this.setState({ clicked, user })
       // console.log(this.state.user)
       // console.log(chosenBusiness)
@@ -61,16 +61,15 @@ class WakeUp extends React.Component {
       await axios.patch(`api/users/${payload}/`, {...this.state.user}, {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
-      // this.props.history.push('/intown')
+      this.props.history.push('/intown')
     } catch (err) {
       console.log(err)
-      // this.props.history.push('/intown')
     }
   }
 
   render() {
     if (!this.state.user) return null
-    // console.log(this.state.user)
+    console.log(this.state.user)
     return (
       <header className="wakeup-masthead masthead">
       <Container>
@@ -107,7 +106,6 @@ class WakeUp extends React.Component {
                       return <div key={business.name}>
                         <Col md="auto">
                           <button className="no-border"
-                          
                           value={this.state.id}
                             onClick={this.handleClick}>
                               <img src={business.image} alt={business.name} height="200" width="200" name={i}/>
