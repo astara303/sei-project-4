@@ -15,9 +15,14 @@ const Home = () => (
 
       {!Auth.isAuthenticated() &&
         // <h2 className="sub">Please register or login to play</h2>
-        <Link to={'/login'}>
-        <Button className="btn btn-light" size="lg">Register or login to play</Button>
+        <>
+        <Link to={'/register'}>
+        <Button className="btn btn-light" size="lg">Register or</Button>
       </Link>
+      <Link to={'/login'}>
+      <Button className="btn btn-light" size="lg">login to play</Button>
+      </Link>
+      </>
       }
       {Auth.isAuthenticated() &&
       <Link to={'/wakeup'}>

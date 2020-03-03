@@ -79,27 +79,26 @@ class WakeUp extends React.Component {
               <Card.Body>
                 <Card.Title className="small-title">Wake up.</Card.Title>
                 <Card.Text>
-                  Today's the day. It’s the morning of your interview. 
-                  What time is it? You check the clock. Two minutes until your alarm goes off. 
-                  You close your eyes and try to relax, but so many thoughts begin banging around inside your skull.
-                  Today could change your life.
-                  What if you get this job? It’s your dream to work for a company like this.
-                  What if you blow it?
-                  Will you get along with the interviewer?
-                  What if you can’t come up with the right answer? What will you do?
-                  Your alarm goes off.
-                  You remind yourself how far you’ve come.
-                  You remember that you are taking a step towards a career that you are passionate about.
-                  You know your developer skills are valuable and you’re excited to show someone what you can do.
-                  You’ve got this!
-                <br />
+                  <p className="add-margin">Today's the day. It’s the morning of your interview.</p> 
+                  <p className="add-margin">What time is it? You check the clock. Two minutes until your alarm goes off. </p> 
+                  <p className="add-margin">You close your eyes and try to relax, but so many thoughts begin banging around inside your skull.</p> 
+                  <p className="add-margin">Today could change your life.</p> 
+                  <p className="add-margin">What if you get this job? It’s your dream to work for a company like this.</p> 
+                  <p className="add-margin">What if you blow it?</p> 
+                  <p className="add-margin">Will you get along with the interviewer?</p> 
+                  <p className="add-margin">What if you can’t come up with the right answer? What will you do?</p> 
+                  <p className="add-margin">Your alarm goes off.</p> 
+                  <p className="add-margin">You remind yourself how far you’ve come.</p> 
+                  <p className="add-margin">You remember that you are taking a step towards a career that you are passionate about.</p> 
+                  <p className="add-margin">You know your developer skills are valuable and you’re excited to show someone what you can do.</p> 
+                  <p className="add-margin">You’ve got this!</p> 
                   After showering, it’s time to <span className="bold-text">grab the outfit you planned the night before:</span>
+                  <br />
                   {this.state.clicked &&
                     <div>
                       <Button onClick={this.handleSubmit} className="btn btn-light">You have some breakfast and hit the road.</Button>
                     </div>
                   }
-                  <br />
                 </Card.Text>
                   <Row className="justify-content-md-center">
                     {this.state.businesses.map((business, i) => {

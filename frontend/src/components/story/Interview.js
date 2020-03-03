@@ -138,7 +138,7 @@ class Interview extends React.Component {
                     <div>
                       <p>{this.state.playerGuess}</p>
                     </div>
-                    <Button variant="outline-dark" onClick={this.handleNext}>Next</Button>
+                    <Button className="btn btn-light" onClick={this.handleNext}>Next</Button>
                   </>
                 }
                   </Card.Body>
@@ -147,10 +147,10 @@ class Interview extends React.Component {
             </Row>
           </Container>
         }
-        {this.state.endInterview && this.state.score >= 3 &&
+        {this.state.endInterview && this.state.score >= 4 &&
           <InterviewSuccessful score={this.state.score} />
         }
-        {this.state.endInterview && this.state.score < 3 &&
+        {this.state.endInterview && this.state.score < 4 &&
           <InterviewUnsuccessful score={this.state.score} />
         }
         </header>

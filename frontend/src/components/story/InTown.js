@@ -55,7 +55,7 @@ class InTown extends React.Component {
       await axios.patch(`api/users/${payload}/`, {...this.state.user}, {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
-      // this.props.history.push('/roadworks')
+      this.props.history.push('/roadworks')
     } catch (err) {
       console.log(err)
     }
@@ -72,16 +72,16 @@ class InTown extends React.Component {
               <Card.Body>
                 <Card.Title className="small-title">Nearly Interview Time.</Card.Title>
                 <Card.Text>
-                  <p>You journey into town and arrive near to the offices where your interview will be held.</p>
-                  <p>You mentally trace over code you’ve written, wondering what they will ask you about.</p>
-                  <p>Maybe about that function you wrote that builds a grid?</p>
-                  <p>Maybe about that button that animates little hearts when you click it?</p>
-                  <p>Recursion?</p>
-                  <p>Data types?</p>
-                  <p>Recursion?</p>
-                  <p>You feel yourself going in circles, so you pop into the nearest cafe to clear your mind.</p>
+                  <p className="add-margin">You journey into town and arrive near to the offices where your interview will be held.</p>
+                  <p className="add-margin">You mentally trace over code you’ve written, wondering what they will ask you about.</p>
+                  <p className="add-margin">Maybe about that function you wrote that builds a grid?</p>
+                  <p className="add-margin">Maybe about that button that animates little hearts when you click it?</p>
+                  <p className="add-margin">Recursion?</p>
+                  <p className="add-margin">Data types?</p>
+                  <p className="add-margin">Recursion?</p>
+                  <p className="add-margin">You feel yourself going in circles, so you pop into the nearest cafe to clear your mind.</p>
                   <br />
-                  <p><span className="bold-text">What do you choose to drink?</span></p>
+                  <p className="add-margin"><span className="bold-text">What do you choose to drink?</span></p>
                 </Card.Text>
                 {this.state.clicked &&
                   <div>

@@ -36,24 +36,24 @@ class InterviewUnsuccessful extends React.Component {
               <Card.Body>
                 <Card.Title className="small-title">It's been a few days since the interview.</Card.Title>
                 <Card.Text>
-                  Your phone rings. You answer. A familiar voice is on the other end. 
-                  "Hello, is this {this.state.user.username}?"
-                  "Yes, it is."
-                  "Hello there! I wanted to thank you so much for interviewing with our company. We really enjoyed meeting you-"
-                  Your heart doesn't know whether to fly or sink. Is this a gentle let down or are they setting you up for good news?
-                  "But unfortunately on this occasion we've decided to offer the role to another candidate."
-                  You can feel a weight on your chest, but a strange relief as well.
-                  "Thank you so much for letting me know. It was a pleasure to meet you and interview with you." You're proud of yourself for getting that out.
-                  "Of course, and we will be in touch if any future roles would suit you."
-                  "That's great. Thank you again."
-                  "Have a lovely day, bye!"
-                  "You too, goodbye."
-                  You hang up the phone and take a deep breath. There is that weight on you, tempting you to blame yourself and spiral into self-pity. But there's also that relief. What is that? Maybe a reminder that you just have to keep going. There is something better for you, more suited for you, out there.
-                  Until you do land that dream job- and we all know you will- feel free to run through this interview a few times and remind yourself that you are always moving forward, and that interviews hinge on luck as much as skill.
-                  In the meantime, connect with other users who are currently looking for jobs or have become employed since using the site.
-                  Happy interviewing!
-                  <Link to={`/profile/${Auth.getPayload().sub}`}><Button className="btn btn-light">Go to profile</Button></Link>
-                  <Link to={'/interviewers'}><Button className="btn btn-light">See users</Button></Link>
+                <p className="add-margin">Your phone rings. You answer. A familiar voice is on the other end. </p>
+                <p className="add-margin">"Hello, is this {this.state.user.username}?"</p>
+                <p className="add-margin">"Yes, it is."</p>
+                <p className="add-margin">"Hello there! I wanted to thank you so much for interviewing with our company. We really enjoyed meeting you-"</p>
+                <p className="add-margin">Your heart doesn't know whether to fly or sink. Is this a gentle let down or are they setting you up for good news?</p>
+                <p className="add-margin">"But unfortunately on this occasion we've decided to offer the role to another candidate."</p>
+                <p className="add-margin">You can feel a weight on your chest, but a strange relief as well.</p>
+                <p className="add-margin">"Thank you so much for letting me know. It was a pleasure to meet you and interview with you." You're proud of yourself for getting that out.</p>
+                <p className="add-margin">"Of course, and we will be in touch if any future roles would suit you."</p>
+                <p className="add-margin">"That's great. Thank you again."</p>
+                <p className="add-margin">"Have a lovely day, bye!"</p>
+                <p className="add-margin">"You too, goodbye."</p>
+                <p className="add-margin">You hang up the phone and take a deep breath. There is that weight on you, tempting you to blame yourself and spiral into self-pity. But there's also that relief. What is that? Maybe a reminder that you just have to keep going. There is something better for you, more suited for you, out there.</p>
+                <p className="add-margin">Until you do land that dream job- and we all know you will- feel free to run through this interview a few times and remind yourself that you are always moving forward, and that interviews hinge on luck as much as skill.</p>
+                <p className="add-margin">In the meantime, connect with other users who are currently looking for jobs or have become employed since using the site.</p>
+                <p className="add-margin">Happy interviewing!</p>
+                  <Link to={`/profile/${Auth.getPayload().sub}`}><Button variant="secondary" className="btn add-margin">Go to profile</Button></Link>
+                  <Link to={'/interviewers'}><Button variant="secondary" className="btn add-margin">See users</Button></Link>
                 </Card.Text>
               </Card.Body>
             </Card>
