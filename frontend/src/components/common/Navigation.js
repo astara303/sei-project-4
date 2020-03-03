@@ -34,15 +34,6 @@ class Navigation extends React.Component {
     }
   }
 
-  componentDidMount() {
-    if (Auth.isAuthenticated()) {
-      const payload = Auth.getPayload().sub
-      this.setState({ payload })
-    } else {
-    return
-    }
-  }
-
   render() {
     return (
       <Navbar bg="" variant="light">

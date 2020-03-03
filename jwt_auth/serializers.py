@@ -11,10 +11,16 @@ User = get_user_model()
 # creating the serializer to validate users information when registering - checks if their password and password_confirmation match 
 class UserSerializer(serializers.ModelSerializer):
 
-    password = serializers.CharField(write_only=True)
-    password_confirmation = serializers.CharField(write_only=True)
+    password = serializers.CharField(write_only=True, required=False)
+    password_confirmation = serializers.CharField(write_only=True, required=False)
+    # testing put request, might not need these 2 lines
+    # email = serializers.CharField(write_only=True, required=False)
+    # username = serializers.CharField(write_only=True, required=False)
 
     def validate(self, data):
+      # our code to check that if not creating (posting) dont require password and password conf
+        if not self.context['is_create']:
+          return data
 
         password = data.pop('password')
         password_confirmation = data.pop('password_confirmation')

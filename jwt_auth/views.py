@@ -8,6 +8,7 @@ from django.contrib.auth import get_user_model
 # from .models import Profile
 from django.conf import settings
 import jwt 
+from jwt_auth.authentication import JWTAuthentication
 
 from .serializers import UserSerializer, PopulatedUserSerializer
 User = get_user_model()
@@ -17,7 +18,7 @@ class RegisterView(APIView):
     
     def post(self, request):
 
-      serialized_user = UserSerializer(data=request.data)
+      serialized_user = UserSerializer(data=request.data, context={'is_create': True })
 
       if serialized_user.is_valid():
         serialized_user.save()
@@ -66,13 +67,31 @@ class UserProfileView(APIView):
         except User.DoesNotExist:
             return Response({'message': 'Not Found'}, status=HTTP_404_NOT_FOUND)
 
-    def put(self, request, pk):
+    def patch(self, request, pk):
 
         try:
-            user = User.objects.get(pk=pk)
-            updated_user = UserSerializer(user, data=request.data)
+            
+            userAuth = JWTAuthentication.authenticate(self, request)
+            # print(userAuth)
+            # user = User.objects.get(pk=userAuth[user])
+            user = request.user
+            print(user.email)
+            # print(request.user.username)
+            print(request.data)
+            # user1 = UserSerializer(user)
+            # print(UserSerializer(user).data)
+            # print(UserSerializer(user).data.username)
+            # print(user)
+            # print(request.data)
+            # print(user)
+            # print((request.user.email == user.email) and (request.user.username == user.username))
+
+            updated_user = UserSerializer(user, data=request.data, context={'is_create': False }, partial=True)
+            # print(updated_user)
             if updated_user.is_valid():
+  
               updated_user.save()
+              # print(updated_user)
               return Response(updated_user.data, status=HTTP_202_ACCEPTED)
             return Response(updated_user.errors, status=HTTP_422_UNPROCESSABLE_ENTITY)
         except User.DoesNotExist:
