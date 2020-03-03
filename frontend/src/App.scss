@@ -23,15 +23,15 @@ body {
 }
 
 .homepage-masthead {
-  background-image: url('./assets/homepage2-01.png');
+  background-image: url('./assets/homepage3-01.png');
 }
 
 .wakeup-masthead {
-  background-image: url('./assets/wakeup-01.png');
+  background-image: url('./assets/wakeup2-01.png');
 }
 
 .intown-masthead {
-  background-image: url('./assets/Untitled-1-01.png');
+  background-image: url('./assets/cafe-01.png');
 }
 
 // .roadworks-masthead {
@@ -88,14 +88,35 @@ body {
 }
 
 p {
-margin: 5px;
-padding: 0;
-color: #7372FF;
-font-weight: bold;
+  margin: 5px;
+  padding: 0;
+  color: #7372FF;
+  font-weight: bold;
+}
+
+.test-border {
+  border: 2px solid red;
+}
+
+.profile-image {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.business-image {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
 }
 
 .add-margin {
   margin: 15px;
+}
+
+.add-margin-more {
+  margin: 25px;
 }
 
 .bold-text {

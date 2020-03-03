@@ -14,6 +14,7 @@ import RoadWorks from './components/story/RoadWorks'
 import UserShow from './components/common/UserShow'
 import UserIndex from './components/common/UserIndex'
 import Profile from './components/common/Profile'
+import ProfileEdit from './components/common/ProfileEdit'
 
 const App = () => (
   <BrowserRouter>
@@ -26,6 +27,7 @@ const App = () => (
         <Route path="/roadworks" component={RoadWorks} />
         <Route path="/interviewers/:id" component={UserShow}/>
         <Route path="/interviewers" component={UserIndex} />
+        <Route path="/profile/:payload/edit" component={ProfileEdit} />
         <Route path="/profile/:id" component={Profile} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />

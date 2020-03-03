@@ -125,7 +125,7 @@ class Interview extends React.Component {
                       {/* <hr /> */}
                       <p className="code">{this.state.questionObj.codeOne}</p>
                       {this.state.questionObj.codeTwo &&
-                        <p>{this.state.questionObj.codeTwo}</p>
+                        <p className="code">{this.state.questionObj.codeTwo}</p>
                       }
                     </Card.Text>
                     <br />

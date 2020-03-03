@@ -3,35 +3,26 @@ import { Link } from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 
+import Auth from '../../lib/auth'
 
-const UserCard = ({ username, id, first_name, profile_image, location }) => (
+const UserCard = ({ username, id, profile_image, location, payload }) => (
   <div key={id}>
-  <Col md="auto">
-    <Link to={`/interviewers/${id}/`}>
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={profile_image} />
-      <Card.Body>
-      <Card.Title>{username}</Card.Title>
-      <Card.Text>
-        {first_name} - {location}
-      </Card.Text>
-    </Card.Body>
-    </Card>
-    </Link>
+    { console.log('payload is', payload) }
+    <Col md="auto">
+      <Card style={{ width: '18rem' }}>
+        <Link to={ (Auth.getPayload().sub === id) ? `/profile/${payload}` : `/interviewers/${id}/` }>
+          <Card.Img className="profile-image" variant="top" src={profile_image} />
+        </Link>
+        <Card.Body>
+          <Card.Title>{username}</Card.Title>
+          <Card.Text>
+            {location}
+          </Card.Text>
+        </Card.Body>
+      </Card>
     </Col>
   </div>
 )
 
-{/* <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card> */}
 
 export default UserCard
