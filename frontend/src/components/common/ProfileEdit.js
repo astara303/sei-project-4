@@ -71,7 +71,7 @@ class ProfileEdit extends React.Component {
           </Col>
         </Row>
 
-        <Row className="justify-content-md-center test-border">
+        <Row className="justify-content-md-center">
           <Col md="auto">
             <Card style={{ width: '25rem' }}>
               <Card.Body>

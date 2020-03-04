@@ -12,6 +12,7 @@ body {
   text-align: center;
   font-family: 'Spartan';
   font-size: 15px;
+  // background-color: #D0FF97;
 }
 
 .masthead {
@@ -20,6 +21,14 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
+}
+
+.plain-background {
+  background-color: #D0FF97;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: repeat;
+
 }
 
 // this is to make the longer pages have background image to the bottom
@@ -115,6 +124,10 @@ p {
 
 .add-margin {
   margin: 15px;
+}
+
+.interview-margin {
+  margin: 5px;
 }
 
 .add-margin-more {

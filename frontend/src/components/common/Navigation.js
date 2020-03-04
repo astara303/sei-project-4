@@ -36,7 +36,7 @@ class Navigation extends React.Component {
 
   render() {
     return (
-      <Navbar bg="" variant="light">
+      <Navbar bg="light" variant="light">
         <Nav className="mr-auto">
         <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/interviewers">User Index</Nav.Link>
