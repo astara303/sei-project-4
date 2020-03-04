@@ -79,11 +79,11 @@ const UserForm = ({ data, handleChange, handleSubmit, handleChangeImage }) => {
           checked={data.looking_for_work}
         />
       </Form.Group>
-
+      <hr />
       <Form.Group>
         <Form.Label>Upload Profile Image</Form.Label>
         <ImageUpload // this image upload component can be copied and used wherever as we've made it customisable - you just have to change the fields below. this works because we're sending the info down as props
-          labelText="My custom label text"
+          labelText=""
           onChange={handleChange}
           handleChangeImage={handleChangeImage}
           fieldName="profile_image"

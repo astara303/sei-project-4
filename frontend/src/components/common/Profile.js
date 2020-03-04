@@ -55,23 +55,24 @@ class Profile extends React.Component {
           </Col>
         </Row>
 
-        <Row className="">
+        <Row className="justify-content-md-center">
           <Col>
             <img className="profile-image" src={user.profile_image} alt={user.first_name} />
           </Col>
-          <Col className="">
-            <p>Name: {user.first_name} {user.last_name}</p>
-            <p>Location: {user.location}</p>
-            <p>Website: <a href={user.website} target="_blank">{user.website}</a></p>
-            <p>{user.looking_for_work ? 'User is looking for work!' : 'User not currently looking for work'}</p>
-            <Link to={`/profile/${payload}/edit`}><Button className="btn btn-light">Edit profile</Button></Link>
+          <Col className="justify-content-md-center">
+            <p className="add-margin">Name: {user.first_name} {user.last_name}</p>
+            <p className="add-margin">Location: {user.location}</p>
+            <p className="add-margin">Website: <a href={user.website} target="_blank">{user.website}</a></p>
+            <p className="add-margin">{user.looking_for_work ? 'User is looking for work!' : 'User not currently looking for work'}</p>
+            <Link to={`/profile/${payload}/edit`}><Button className="btn btn-light add-margin">Edit profile</Button></Link>
           </Col>
         </Row>
-
+        <hr />
           {/* {this.state.firstBusiness && */}
           {/* <> */}
-        <h1 className="small-title">Your favourite businesses from the story- be sure to give them a visit!</h1>
-
+        <h1 className="small-title">Your favourite businesses from the story</h1>
+        <h1 className="small-title">be sure to give them a visit!</h1>
+        <br />
         <Row className="justify-content-md-center">
             <>
             <Col md="auto">

@@ -41,9 +41,9 @@ class UserShow extends React.Component {
     if (!user.businesses) return null
     console.log('businesses', this.state.user.businesses)
     return (
-      <Container className="test-border">
+      <Container className="">
         <Row className="add-margin-more">
-          <Col>
+          <Col className="">
             <h1 className="small-title">{user.username}</h1>
             <p>Name: {user.first_name} {user.last_name}</p>
             <p>Location: {user.location}</p>

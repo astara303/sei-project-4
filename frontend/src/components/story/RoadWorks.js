@@ -72,11 +72,10 @@ class RoadWorks extends React.Component {
                 <Card style={{ width: '36rem' }}>
                   <Card.Body>
                     <Card.Title className="small-title">There are roadworks blocking you from crossing the road.</Card.Title>
-                    <Card.Text>
-                      <p className="add-margin">There isn't another crossing anywhere in sight. There are signs for a detour, and you can see masses of people trying to squish through the narrow, fenced-in path.</p>
-                      <p className="add-margin">You check your map on your phone and it suggests what looks like a shortcut...</p>
-                      <p className="add-margin bold-text">Do you wait your turn to squish through the detour, or try the shortcut?</p>
-                    </Card.Text>
+                    <br />
+                      <Card.Text className="add-margin">There isn't another crossing anywhere in sight. There are signs for a detour, and you can see masses of people trying to squish through the narrow, fenced-in path.</Card.Text>
+                      <Card.Text className="add-margin">You check your map on your phone and it suggests what looks like a shortcut...</Card.Text>
+                      <Card.Text className="add-margin bold-text">Do you wait your turn to squish through the detour, or try the shortcut?</Card.Text>
                     <Button className="btn btn-light add-margin" onClick={this.handleChoice}>Take the shortcut.</Button>
                     <Button className="btn btn-light add-margin" onClick={this.handleChoice}>Follow the detour signs.</Button>
                   </Card.Body>

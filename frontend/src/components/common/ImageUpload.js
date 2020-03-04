@@ -27,7 +27,7 @@ class ImageUpload extends React.Component {
       <>
         {image ? // if there is an image show that image - if not show the file uploader!
           <div>
-            <img src={image} />
+            <img className="profile-image" src={image} />
           </div>
           :
           <>
