@@ -2,8 +2,9 @@ import React from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
+import ImageUpload from './ImageUpload'
 
-const UserForm = ({ data, handleChange, handleSubmit }) => {
+const UserForm = ({ data, handleChange, handleSubmit, handleChangeImage }) => {
   return (
     <Form onSubmit={handleSubmit}>
 
@@ -68,28 +69,6 @@ const UserForm = ({ data, handleChange, handleSubmit }) => {
         />
       </Form.Group>
 
-      {/* <Form.Group>
-        <Form.Label>Password</Form.Label>
-        <Form.Control
-          type="password"
-          placeholder="Password"
-          name="password"
-          onChange={handleChange}
-          value={data.password}
-        />
-      </Form.Group>
-
-      <Form.Group>
-        <Form.Label>Password Confirmation</Form.Label>
-        <Form.Control
-          type="password"
-          placeholder="Password Confirmation"
-          name="password_confirmation"
-          onChange={handleChange}
-          value={data.password_confirmation}
-        />
-      </Form.Group> */}
-
       <Form.Group>
         <Form.Check
           type="checkbox"
@@ -100,11 +79,22 @@ const UserForm = ({ data, handleChange, handleSubmit }) => {
           checked={data.looking_for_work}
         />
       </Form.Group>
-      
+
+      <Form.Group>
+        <Form.Label>Upload Profile Image</Form.Label>
+        <ImageUpload // this image upload component can be copied and used wherever as we've made it customisable - you just have to change the fields below. this works because we're sending the info down as props
+          labelText="My custom label text"
+          onChange={handleChange}
+          handleChangeImage={handleChangeImage}
+          fieldName="profile_image"
+          name="profile_image"
+        />
+      </Form.Group>
+
       <Button variant="outline-dark" type="submit">Update</Button>
-    
+
     </Form>
-      )
-    }
-    
+  )
+}
+
 export default UserForm

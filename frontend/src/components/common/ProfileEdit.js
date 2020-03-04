@@ -59,6 +59,13 @@ class ProfileEdit extends React.Component {
     }
   }
 
+  handleChangeImage = ({ target: { name, value } }) => {
+    const newValue = value
+    const data = { ...this.state.data, [name]: newValue }
+    this.setState({ data })
+  }
+
+
   render() {
     return (
       <Container>
@@ -76,8 +83,10 @@ class ProfileEdit extends React.Component {
                 <UserForm
                   handleChange={this.handleChange}
                   handleSubmit={this.handleSubmit}
+                  handleChangeImage={this.handleChangeImage}
                   data={this.state.data}
                 />
+
               </Card.Body>
             </Card>
           </Col>
