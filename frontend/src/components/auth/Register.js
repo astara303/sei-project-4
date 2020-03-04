@@ -85,7 +85,7 @@ class Register extends React.Component {
                       name="profile_image"
                       onChange={this.handleChange}
                     /> */}
-                    {/* {this.state.error &&
+                  {/* {this.state.error &&
                       <Form.Text className="text-muted">
                         {this.state.error}
                       </Form.Text>

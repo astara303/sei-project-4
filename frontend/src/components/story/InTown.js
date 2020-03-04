@@ -38,7 +38,7 @@ class InTown extends React.Component {
     if (clicked === false) {
       clicked = true
       const chosenBusiness = this.state.businesses[id]
-      const user = { ...this.state.user, businesses: [...this.state.user.businesses, chosenBusiness.id]}
+      const user = { ...this.state.user, businesses: [...this.state.user.businesses, chosenBusiness.id] }
       // console.log(user)
       this.setState({ clicked, user })
       // console.log(this.state.user)
@@ -52,7 +52,7 @@ class InTown extends React.Component {
     e.preventDefault()
     const payload = Auth.getPayload().sub
     try {
-      await axios.patch(`api/users/${payload}/`, {...this.state.user}, {
+      await axios.patch(`api/users/${payload}/`, { ...this.state.user }, {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
       this.props.history.push('/roadworks')
@@ -66,12 +66,12 @@ class InTown extends React.Component {
     // correct background
     return (
       <header className="intown-masthead masthead">
-      <Container>
-        <Row className="justify-content-md-center">
-          <Col md="auto">
-            <Card style={{ width: '60rem' }}>
-              <Card.Body>
-                <Card.Title className="small-title">Nearly Interview Time.</Card.Title>
+        <Container>
+          <Row className="justify-content-md-center">
+            <Col md="auto">
+              <Card style={{ width: '60rem' }}>
+                <Card.Body>
+                  <Card.Title className="small-title">Nearly Interview Time.</Card.Title>
                   <Card.Text>You journey into town and arrive near to the offices where your interview will be held.</Card.Text>
                   <Card.Text>You mentally trace over code you’ve written, wondering what they will ask you about.</Card.Text>
                   <Card.Text>Maybe about that function you wrote that builds a grid?</Card.Text>
@@ -82,31 +82,31 @@ class InTown extends React.Component {
                   <Card.Text>You feel yourself going in circles, so you pop into the nearest cafe to clear your mind.</Card.Text>
                   <br />
                   <Card.Text><span className="bold-text">What do you choose to drink?</span></Card.Text>
-                {this.state.clicked &&
-                  <div>
-                    <br />
-                    <Button onClick={this.handleSubmit} className="btn btn-light">Feeling a bit perked up, you leave the cafe and continue towards the office.</Button>
-                  </div>
-                }
-                <br />
-                <Row className="justify-content-md-center">
-                  {this.state.businesses.map((business, i) => {
-                    return <div key={business.name}>
-                      <Col md="auto">
-                        <button className="no-border"
-                        value={this.state.id} 
-                        onClick={this.handleClick}
-                        ><img src={business.image} alt={business.name} height="200" width="200" name={i}/></button>
-                      </Col>
+                  {this.state.clicked &&
+                    <div>
+                      <br />
+                      <Button onClick={this.handleSubmit} className="btn btn-light">Feeling a bit perked up, you leave the cafe and continue towards the office.</Button>
                     </div>
-                  })
                   }
-                </Row>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
+                  <br />
+                  <Row className="justify-content-md-center">
+                    {this.state.businesses.map((business, i) => {
+                      return <div key={business.name}>
+                        <Col md="auto">
+                          <button className="no-border"
+                            value={this.state.id}
+                            onClick={this.handleClick}
+                          ><img src={business.image} alt={business.name} height="200" width="200" name={i} /></button>
+                        </Col>
+                      </div>
+                    })
+                    }
+                  </Row>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
       </header>
     )
   }

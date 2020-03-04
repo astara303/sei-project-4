@@ -27,7 +27,7 @@ const App = () => (
         <SecureRoute path="/wakeup" component={WakeUp} />
         <SecureRoute path="/intown" component={InTown} />
         <SecureRoute path="/roadworks" component={RoadWorks} />
-        <Route path="/interviewers/:id" component={UserShow}/>
+        <Route path="/interviewers/:id" component={UserShow} />
         <Route path="/interviewers" component={UserIndex} />
         <SecureRoute path="/profile/:payload/edit" component={ProfileEdit} />
         <SecureRoute path="/profile/:id" component={Profile} />

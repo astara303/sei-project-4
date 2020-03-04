@@ -13,24 +13,24 @@ class Navigation extends React.Component {
   // toggleNavbar = () => {
   //   this.setState({ navbarOpen: !this.state.navbarOpen })
   // }
-  
+
   handleLogout = () => {
     Auth.logout()
     this.props.history.push('/')
   }
-  
+
   // componentDidUpdate(prevProps) {
-    //   if (this.props.location.pathname !== prevProps.location.pathname) {
-      //     this.setState({ navbarOpen: false })
-      //   }
-      // }
-      
+  //   if (this.props.location.pathname !== prevProps.location.pathname) {
+  //     this.setState({ navbarOpen: false })
+  //   }
+  // }
+
   componentDidMount() {
     if (Auth.isAuthenticated()) {
       const payload = Auth.getPayload().sub
       this.setState({ payload })
     } else {
-    return
+      return
     }
   }
 
@@ -38,13 +38,23 @@ class Navigation extends React.Component {
     return (
       <Navbar bg="light" variant="light">
         <Nav className="mr-auto">
-        <Nav.Link href="/">Home</Nav.Link>
-        <Nav.Link href="/interviewers">User Index</Nav.Link>
-          {Auth.isAuthenticated() && <Nav.Link href="/wakeup">Story</Nav.Link>}
+          <Nav.Link href="/">Home</Nav.Link>
+          <Nav.Link href="/interviewers">Connect</Nav.Link>
+          {Auth.isAuthenticated() && <Nav.Link href="/wakeup">Start Your Story</Nav.Link>}
           {Auth.isAuthenticated() && <Nav.Link href={`/profile/${this.state.payload}`}>Profile</Nav.Link>}
           {!Auth.isAuthenticated() && <Nav.Link href="/register">Register</Nav.Link>}
           {!Auth.isAuthenticated() && <Nav.Link href="/login">Login</Nav.Link>}
         </Nav>
+        {/* <Nav className="justify-content-center"> */}
+        {/* <Navbar.Brand href="/">code_newbie</Navbar.Brand> */}
+        {/* <img
+        src="../assets/logo-01.png"
+        width="30"
+        height="15"
+        className="d-inline-block align-top"
+        alt="logo"
+      /> */}
+        {/* </Nav> */}
         <Nav className="mr-sm-2">
           {Auth.isAuthenticated() && <Button onClick={this.handleLogout} variant="outline-secondary">Logout</Button>}
         </Nav>

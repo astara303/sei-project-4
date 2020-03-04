@@ -65,13 +65,13 @@ class Profile extends React.Component {
           </Col>
         </Row>
         <hr />
-          {/* {this.state.firstBusiness && */}
-          {/* <> */}
+        {/* {this.state.firstBusiness && */}
+        {/* <> */}
         <h1 className="small-title">Your favourite businesses from the story</h1>
         <h1 className="small-title">be sure to give them a visit!</h1>
         <br />
         <Row className="justify-content-md-center">
-            <>
+          <>
             <Col md="auto">
               <Card style={{ width: '18rem' }}>
                 <Card.Img className="business-image" variant="toptop" src={this.state.firstBusiness.image} alt={this.state.firstBusiness.name} />
@@ -81,7 +81,7 @@ class Profile extends React.Component {
                 </Card.Body>
               </Card>
             </Col>
-          
+
 
             <Col md="auto">
               <Card style={{ width: '18rem' }}>
@@ -92,7 +92,7 @@ class Profile extends React.Component {
                 </Card.Body>
               </Card>
             </Col>
-            </>
+          </>
         </Row>
       </Container>
 
