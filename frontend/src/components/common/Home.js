@@ -17,10 +17,10 @@ const Home = () => (
         // <h2 className="sub">Please register or login to play</h2>
         <>
         <Link to={'/register'}>
-        <Button className="btn btn-light" size="lg">Register or</Button>
+        <Button className="btn btn-light add-margin" size="lg">Register or</Button>
       </Link>
       <Link to={'/login'}>
-      <Button className="btn btn-light" size="lg">login to play</Button>
+      <Button className="btn btn-light add-margin" size="lg">login to play</Button>
       </Link>
       </>
       }

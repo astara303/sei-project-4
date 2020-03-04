@@ -57,7 +57,7 @@ class UserShow extends React.Component {
         </Row>
       {this.state.firstBusiness &&
         <>
-        <h1 className="small-title">Chosen Businesses:</h1>
+        <h1 className="small-title">{user.username}'s favourite local businesses:</h1>
         <Row className="justify-content-md-center test-border">
 
           <Col md="auto">

@@ -51,8 +51,8 @@ class InterviewSuccessful extends React.Component {
                   <p className="add-margin">You hang up the phone and take a deep breath. You always knew you could do it.</p>
                   <p className="add-margin">When you do land that dream job- and we all know you will- don't forget to update your user profile to employed! In the meantime, connect with other users who are currently looking for jobs or have become employed since using the site.</p>
                   <p className="add-margin">Happy interviewing!</p>
-                  <Link to={`/profile/${Auth.getPayload().sub}`}><Button className="btn btn-light">Go to profile</Button></Link>
-                  <Link to={'/interviewers'}><Button className="btn btn-light">See users</Button></Link>
+                  <Link to={`/profile/${Auth.getPayload().sub}`}><Button className="btn btn-light add-margin">Go to profile</Button></Link>
+                  <Link to={'/interviewers'}><Button className="btn btn-light add-margin">See users</Button></Link>
                 </Card.Text>
               </Card.Body>
             </Card>

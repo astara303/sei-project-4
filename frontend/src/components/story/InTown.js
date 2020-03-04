@@ -57,7 +57,7 @@ class InTown extends React.Component {
       })
       this.props.history.push('/roadworks')
     } catch (err) {
-      console.log(err)
+      this.props.history.push('/notfound')
     }
   }
 

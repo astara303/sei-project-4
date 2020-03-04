@@ -123,14 +123,12 @@ class Interview extends React.Component {
                     <Card.Text>
                       <p>{this.state.questionObj.question}</p>
                       <br />
-                      {/* <hr /> */}
                       <p className="code">{this.state.questionObj.codeOne}</p>
                       {this.state.questionObj.codeTwo &&
                         <p className="code">{this.state.questionObj.codeTwo}</p>
                       }
                     </Card.Text>
                     <br />
-                    {/* <hr /> */}
                     {this.state.combinedAnswers && this.state.combinedAnswers.map(answer => (
                       <Button variant="secondary" className="btn btn-secondary add-margin code" onClick={this.handleGuess} key={answer}>{answer}</Button>
                     ))}

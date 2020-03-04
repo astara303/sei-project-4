@@ -53,8 +53,8 @@ class InterviewUnsuccessful extends React.Component {
                 <p className="add-margin">Until you do land that dream job- and we all know you will- feel free to run through this interview a few times and remind yourself that you are always moving forward, and that interviews hinge on luck as much as skill.</p>
                 <p className="add-margin">In the meantime, connect with other users who are currently looking for jobs or have become employed since using the site.</p>
                 <p className="add-margin">Happy interviewing!</p>
-                  <Link to={`/profile/${Auth.getPayload().sub}`}><Button variant="secondary" className="btn add-margin">Go to profile</Button></Link>
-                  <Link to={'/interviewers'}><Button variant="secondary" className="btn add-margin">See users</Button></Link>
+                  <Link to={`/profile/${Auth.getPayload().sub}`}><Button className="btn btn-light add-margin">Go to profile</Button></Link>
+                  <Link to={'/interviewers'}><Button className="btn btn-light add-margin">See users</Button></Link>
                 </Card.Text>
               </Card.Body>
             </Card>

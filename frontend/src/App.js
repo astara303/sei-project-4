@@ -15,6 +15,8 @@ import UserShow from './components/common/UserShow'
 import UserIndex from './components/common/UserIndex'
 import Profile from './components/common/Profile'
 import ProfileEdit from './components/common/ProfileEdit'
+import SecureRoute from './components/common/SecureRoute'
+import ErrorPage from './components/common/ErrorPage'
 
 const App = () => (
   <BrowserRouter>
@@ -22,15 +24,16 @@ const App = () => (
       <Navigation />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/wakeup" component={WakeUp} />
-        <Route path="/intown" component={InTown} />
-        <Route path="/roadworks" component={RoadWorks} />
+        <SecureRoute path="/wakeup" component={WakeUp} />
+        <SecureRoute path="/intown" component={InTown} />
+        <SecureRoute path="/roadworks" component={RoadWorks} />
         <Route path="/interviewers/:id" component={UserShow}/>
         <Route path="/interviewers" component={UserIndex} />
-        <Route path="/profile/:payload/edit" component={ProfileEdit} />
-        <Route path="/profile/:id" component={Profile} />
+        <SecureRoute path="/profile/:payload/edit" component={ProfileEdit} />
+        <SecureRoute path="/profile/:id" component={Profile} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
+        <Route path='/*' component={ErrorPage} />
       </Switch>
     </main>
   </BrowserRouter>

@@ -1,24 +1,36 @@
 import React from 'react'
 import axios from 'axios'
 import Container from 'react-bootstrap/Container'
-import Col from 'react-bootstrap/Col'
+// import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 
 import UserCard from './UserCard'
 import Auth from '../../lib/auth'
+import Search from './Search'
 
 class UserIndex extends React.Component {
   state = {
-    users: []
+    users: [],
+    searchTerm: ''
   }
 
   componentDidMount = async () => {
     try {
       const res = await axios.get('/api/users/')
-      this.setState({ users: res.data })
+      this.setState({ users: res.data, searchData: res.data })
     } catch (err) {
       console.log(err)
     }
+  }
+
+  basicSearchFunction = (e) => {
+    this.setState({ searchTerm: e.target.value })
+
+  }
+
+  filterUsers = () => {
+    const searchTerm = new RegExp(this.state.searchTerm, 'i')
+    return this.state.users.filter(user => searchTerm.test(user.location))
   }
 
   render() {
@@ -26,9 +38,15 @@ class UserIndex extends React.Component {
     const payload = Auth.getPayload().sub
     return (
       <Container>
-          <h1 className="small-title add-margin">Find users!</h1>
-        <Row className="">
-            {this.state.users.map(user => (
+          <h1 className="small-title add-margin">Connect with other Interviewers</h1>
+            <div className="add-margin">
+              <Search
+                basicSearchFunction={this.basicSearchFunction}
+                {...this.state}
+              />
+            </div>
+        <Row>
+            {this.filterUsers().map(user => (
               <UserCard
                 key={user.id}
                 {...user}

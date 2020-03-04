@@ -66,8 +66,6 @@ class NearOffice extends React.Component {
 
 
   render() {
-    console.log(this.state.score)
-    console.log(this.state.choiceText)
     return (
       <>
       {/* correct background */}
