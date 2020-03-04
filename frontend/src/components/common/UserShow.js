@@ -9,8 +9,8 @@ import Button from 'react-bootstrap/Button'
 class UserShow extends React.Component {
   state = {
     user: [],
-    firstBusiness: {},
-    secondBusiness: {}
+    firstBusiness: '',
+    secondBusiness: ''
   }
 
   async componentDidMount() {
@@ -55,7 +55,8 @@ class UserShow extends React.Component {
             <img className="profile-image" src={user.profile_image} alt={user.first_name} />
           </Col>
         </Row>
-
+      {this.state.firstBusiness &&
+        <>
         <h1 className="small-title">Chosen Businesses:</h1>
         <Row className="justify-content-md-center test-border">
 
@@ -79,10 +80,10 @@ class UserShow extends React.Component {
               </Card.Body>
             </Card>
           </Col>
-
         </Row>
+        </>
+      }
       </Container>
-
     )
   }
 
