@@ -4,7 +4,7 @@ const Search = ({ basicSearchFunction }) => (
 
   <form onSubmit={(e) => e.preventDefault()}>
       <div className="control">
-        <input className="input" placeholder="Search users by location" onChange={basicSearchFunction}/>
+        <input className="input" placeholder="search by location" onChange={basicSearchFunction}/>
       </div>
   </form>
 

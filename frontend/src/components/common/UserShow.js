@@ -30,7 +30,7 @@ class UserShow extends React.Component {
       const secondBusiness = await axios.get(`/api/businesses/${this.state.user.businesses[1]}`)
       this.setState({ firstBusiness: firstBusiness.data, secondBusiness: secondBusiness.data })
     } catch (err) {
-      console.log(err)
+      this.props.history.push('/notfound')
     }
   }
 

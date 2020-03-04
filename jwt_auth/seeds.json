@@ -19,7 +19,7 @@
     "model": "jwt_auth.User",
     "pk": 2,
     "fields": {
-      "username": "Csqrd",
+      "username": "SeeCelia",
       "first_name": "Celia",
       "last_name": "Dale",
       "email": "celia@email.com",
@@ -56,7 +56,7 @@
       "last_name": "Gopesh",
       "email": "rita@email.com",
       "profile_image": "https://images.unsplash.com/photo-1545506475-5a0985c3ca79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-      "location": "Watford",
+      "location": "Camden",
       "privacy": false,
       "looking_for_work": true,
       "website": "www.ritacodes.com",
@@ -88,7 +88,7 @@
       "last_name": "Glasses",
       "email": "myglasses@email.com",
       "profile_image": "https://images.unsplash.com/photo-1571909346334-e54d6455086b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-      "location": "Bath",
+      "location": "Deptford",
       "privacy": false,
       "looking_for_work": true,
       "website": "www.myglasses.com",
@@ -99,7 +99,7 @@
     "model": "jwt_auth.User",
     "pk": 7,
     "fields": {
-      "username": "Lou",
+      "username": "LouTee123",
       "first_name": "Louis",
       "last_name": "Topper",
       "email": "lou@email.com",
@@ -189,6 +189,54 @@
       "looking_for_work": true,
       "website": "",
       "businesses": [3, 6]
+    }
+  },
+  {
+    "model": "jwt_auth.User",
+    "pk": 13,
+    "fields": {
+      "username": "HiHeidi",
+      "first_name": "Heidi",
+      "last_name": "Reese",
+      "email": "heidi@email.com",
+      "profile_image": "https://images.pexels.com/photos/2169434/pexels-photo-2169434.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "location": "Vauxhall",
+      "privacy": false,
+      "looking_for_work": true,
+      "website": "",
+      "businesses": [4, 8]
+    }
+  },
+  {
+    "model": "jwt_auth.User",
+    "pk": 14,
+    "fields": {
+      "username": "Abz",
+      "first_name": "Abigail",
+      "last_name": "Foreman",
+      "email": "abigail.foreman@outlook.com",
+      "profile_image": "http://res.cloudinary.com/dgy8usa3w/image/upload/v1583324536/upload_demo/yiuusrz1x8r8jbqeug6y.jpg",
+      "location": "Crouch End",
+      "privacy": false,
+      "looking_for_work": true,
+      "website": "www.missgloria.co.uk",
+      "businesses": [2, 7]
+    }
+  },
+  {
+    "model": "jwt_auth.User",
+    "pk": 15,
+    "fields": {
+      "username": "BruceyGoosey",
+      "first_name": "Bruce",
+      "last_name": "Habersfield",
+      "email": "bruce@email.com",
+      "profile_image": "https://images.pexels.com/photos/842980/pexels-photo-842980.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "location": "Brixton",
+      "privacy": false,
+      "looking_for_work": true,
+      "website": "",
+      "businesses": [1, 5]
     }
   }
 ]

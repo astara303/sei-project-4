@@ -32,30 +32,26 @@ class ProfileEdit extends React.Component {
       this.setState({ data: res.data })
       console.log(this.state.data.looking_for_work)
     } catch (err) {
-      console.log(err)
+      this.props.history.push('/notfound')
     }
   }
 
   handleChange = (e) => {
     const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
-    // console.log('value', value)
     const data = { ...this.state.data, [e.target.name]: value }
     this.setState({ data })
-    // console.log(this.state.data)
   }
 
   handleSubmit = async (e) => {
     e.preventDefault()
     const payload = Auth.getPayload().sub
-    console.log(this.state.data)
     try {
-      console.log('handle submit')
       const res = await axios.patch(`/api/users/${payload}/edit`, { ...this.state.data }, {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
       this.props.history.push(`/profile/${payload}`)
     } catch (err) {
-      console.log(err)
+      this.props.history.push('/notfound')
     }
   }
 

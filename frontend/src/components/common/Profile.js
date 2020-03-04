@@ -22,7 +22,7 @@ class Profile extends React.Component {
       const res = await axios.get(`/api/users/${payload}/`)
       this.setState({ user: res.data })
     } catch (err) {
-      console.log(err)
+      this.props.history.push('/notfound')
     }
     this.getBusinesses()
   }
@@ -33,7 +33,7 @@ class Profile extends React.Component {
       const secondBusiness = await axios.get(`/api/businesses/${this.state.user.businesses[1]}`)
       this.setState({ firstBusiness: firstBusiness.data, secondBusiness: secondBusiness.data })
     } catch (err) {
-      console.log(err)
+      this.props.history.push('/notfound')
     }
   }
 
@@ -41,9 +41,6 @@ class Profile extends React.Component {
     if (!this.state.user) return null
     if (!this.state.firstBusiness) return null
     if (!this.state.secondBusiness) return null
-    console.log('firstBusiness', this.state.firstBusiness)
-    console.log('businesses', Boolean(this.state.user.businesses))
-    // console.log('secondBusiness', this.state.secondBusiness)
     const { user } = this.state
     const payload = Auth.getPayload().sub
     return (
@@ -96,14 +93,7 @@ class Profile extends React.Component {
             </Col>
             </>
         </Row>
-        {/* </> */}
-          {/* } */}
-
       </Container>
-
-
-      // <div>{this.state.firstBusiness.name}</div>
-      // <div>{this.state.secondBusiness.name}</div>
 
     )
   }

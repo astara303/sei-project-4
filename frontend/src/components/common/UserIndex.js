@@ -38,13 +38,17 @@ class UserIndex extends React.Component {
     const payload = Auth.getPayload().sub
     return (
       <Container>
+        <Row>
           <h1 className="small-title add-margin">Connect with other Interviewers</h1>
+        </Row>
+        <Row>
             <div className="add-margin">
               <Search
                 basicSearchFunction={this.basicSearchFunction}
                 {...this.state}
               />
             </div>
+            </Row>
         <Row>
             {this.filterUsers().map(user => (
               <UserCard
