@@ -110,46 +110,48 @@ class Interview extends React.Component {
   render() {
     return (
       <>
-      {/* correct background */}
-      <header className="masthead interview-masthead">
-        {!this.state.endInterview &&
-          <Container>
-            <Row className="justify-content-md-center">
-              <Col md="auto">
-                <Card style={{ width: '45rem' }}>
-                  <Card.Body>
-                    <Card.Title className="small-title">It's interview time!</Card.Title>
-                    <br />
-                    <Card.Text>{this.state.questionObj.question}</Card.Text>
+        {/* correct background */}
+        <header className="masthead interview-masthead">
+          {!this.state.endInterview &&
+            <Container>
+              <Row className="justify-content-md-center">
+                <Col md="auto">
+                  <Card style={{ width: '45rem' }}>
+                    <Card.Body>
+                      <Card.Title className="small-title">It's interview time!</Card.Title>
                       <br />
-                      <Card.Text className="code">{this.state.questionObj.codeOne}</Card.Text>
-                      {this.state.questionObj.codeTwo &&
-                        <Card.Text className="code">{this.state.questionObj.codeTwo}</Card.Text>
+                      <Card.Text>
+                        <p>{this.state.questionObj.question}</p>
+                        <br />
+                        <p className="code">{this.state.questionObj.codeOne}</p>
+                        {this.state.questionObj.codeTwo &&
+                          <p className="code">{this.state.questionObj.codeTwo}</p>
+                        }
+                      </Card.Text>
+                      <br />
+                      {this.state.combinedAnswers && this.state.combinedAnswers.map(answer => (
+                        <Button variant="secondary" className="btn btn-secondary add-margin code" onClick={this.handleGuess} key={answer}>{answer}</Button>
+                      ))}
+                      {this.state.playerGuess &&
+                        <>
+                          <div>
+                            <p>{this.state.playerGuess}</p>
+                          </div>
+                          <Button className="btn btn-light" onClick={this.handleNext}>Next</Button>
+                        </>
                       }
-                    <br />
-                    {this.state.combinedAnswers && this.state.combinedAnswers.map(answer => (
-                      <Button variant="secondary" className="btn btn-secondary add-margin code" onClick={this.handleGuess} key={answer}>{answer}</Button>
-                    ))}
-                    {this.state.playerGuess &&
-                  <>
-                    <div>
-                    <Card.Text>{this.state.playerGuess}</Card.Text>
-                    </div>
-                    <Button className="btn btn-light" onClick={this.handleNext}>Next</Button>
-                  </>
-                }
-                  </Card.Body>
-                </Card>
-              </Col>
-            </Row>
-          </Container>
-        }
-        {this.state.endInterview && this.state.score >= 4 &&
-          <InterviewSuccessful score={this.state.score} />
-        }
-        {this.state.endInterview && this.state.score < 4 &&
-          <InterviewUnsuccessful score={this.state.score} />
-        }
+                    </Card.Body>
+                  </Card>
+                </Col>
+              </Row>
+            </Container>
+          }
+          {this.state.endInterview && this.state.score >= 4 &&
+            <InterviewSuccessful score={this.state.score} />
+          }
+          {this.state.endInterview && this.state.score < 4 &&
+            <InterviewUnsuccessful score={this.state.score} />
+          }
         </header>
       </>
     )

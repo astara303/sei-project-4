@@ -63,44 +63,44 @@ class RoadWorks extends React.Component {
   render() {
     return (
       <>
-      {/* correct background */}
-      <header className="masthead roadworks-masthead">
-        {!this.state.clicked &&
-          <Container>
-            <Row className="justify-content-md-center">
-              <Col md="auto">
-                <Card style={{ width: '36rem' }}>
-                  <Card.Body>
-                    <Card.Title className="small-title">There are roadworks blocking you from crossing the road.</Card.Title>
-                    <br />
+        {/* correct background */}
+        <header className="masthead roadworks-masthead">
+          {!this.state.clicked &&
+            <Container>
+              <Row className="justify-content-md-center">
+                <Col md="auto">
+                  <Card style={{ width: '36rem' }}>
+                    <Card.Body>
+                      <Card.Title className="small-title">There are roadworks blocking you from crossing the road.</Card.Title>
+                      <br />
                       <Card.Text className="add-margin">There isn't another crossing anywhere in sight. There are signs for a detour, and you can see masses of people trying to squish through the narrow, fenced-in path.</Card.Text>
                       <Card.Text className="add-margin">You check your map on your phone and it suggests what looks like a shortcut...</Card.Text>
                       <Card.Text className="add-margin bold-text">Do you wait your turn to squish through the detour, or try the shortcut?</Card.Text>
-                    <Button className="btn btn-light add-margin" onClick={this.handleChoice}>Take the shortcut.</Button>
-                    <Button className="btn btn-light add-margin" onClick={this.handleChoice}>Follow the detour signs.</Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-            </Row>
-          </Container>
-        }
-        <>
-          {((this.state.clicked && this.state.shortcutGood) || (this.state.clicked && this.state.detourGood)) &&
-            <NearOffice
-              choiceText={this.state.goodText}
-              score={this.state.goodScore} />
+                      <Button className="btn btn-light add-margin" onClick={this.handleChoice}>Take the shortcut.</Button>
+                      <Button className="btn btn-light add-margin" onClick={this.handleChoice}>Follow the detour signs.</Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              </Row>
+            </Container>
           }
-          {(this.state.clicked && this.state.shortcutBad) &&
-            <NearOffice
-              choiceText={this.state.shortcutBadText}
-              score={this.state.badScore} />
-          }
-          {(this.state.clicked && this.state.detourBad) &&
-            <NearOffice
-              choiceText={this.state.detourBadText}
-              score={this.state.badScore} />
-          }
-        </>
+          <>
+            {((this.state.clicked && this.state.shortcutGood) || (this.state.clicked && this.state.detourGood)) &&
+              <NearOffice
+                choiceText={this.state.goodText}
+                score={this.state.goodScore} />
+            }
+            {(this.state.clicked && this.state.shortcutBad) &&
+              <NearOffice
+                choiceText={this.state.shortcutBadText}
+                score={this.state.badScore} />
+            }
+            {(this.state.clicked && this.state.detourBad) &&
+              <NearOffice
+                choiceText={this.state.detourBadText}
+                score={this.state.badScore} />
+            }
+          </>
         </header>
       </>
     )

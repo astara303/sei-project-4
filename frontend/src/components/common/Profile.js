@@ -85,7 +85,7 @@ class Profile extends React.Component {
                 </Card.Body>
               </Card>
             </Col>
-          
+
 
             <Col md="auto">
               <Card style={{ width: '18rem' }}>

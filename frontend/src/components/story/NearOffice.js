@@ -55,7 +55,7 @@ class NearOffice extends React.Component {
         const keepGoingGood = true
         const clicked = true
         score = score + 1
-        this.setState({ clicked, keepGoingGood , score})
+        this.setState({ clicked, keepGoingGood, score })
       } else {
         const keepGoingBad = true
         const clicked = true
@@ -68,27 +68,27 @@ class NearOffice extends React.Component {
   render() {
     return (
       <>
-      {/* correct background */}
-      <header className="masthead nearoffice-masthead extra-masthead">
-      {!this.state.clicked &&
-      <Container>
-        <Row className="justify-content-md-center">
-          <Col md="auto">
-            <Card style={{ width: '36rem' }}>
-              <Card.Body>
-                <Card.Title className="small-title">After all that, you've made it to the offices.</Card.Title>
-                  <Card.Text className="add-margin">{this.state.choiceText}</Card.Text>
-                  <Card.Text className="add-margin">As you turn a corner, you see someone drop a stack of papers that all blow off in different directions. You briefly make eye contact with them, and while you do sympathise with them, you have to make a choice.</Card.Text>
-                  <Card.Text className="add-margin">The roadworks have left you no time to hang about before you need to check in at reception for the interview.</Card.Text>
-                  <Card.Text className="add-margin bold-text">What do you do?</Card.Text>
-                <Button className="btn btn-light add-margin" onClick={this.handleChoice}>Stop and help collect the papers.</Button>
-                <Button className="btn btn-light add-margin" onClick={this.handleChoice}>Keep going- you can't be late.</Button>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
-      }
+        {/* correct background */}
+        <header className="masthead nearoffice-masthead extra-masthead">
+          {!this.state.clicked &&
+            <Container>
+              <Row className="justify-content-md-center">
+                <Col md="auto">
+                  <Card style={{ width: '36rem' }}>
+                    <Card.Body>
+                      <Card.Title className="small-title">After all that, you've made it to the offices.</Card.Title>
+                      <Card.Text className="add-margin">{this.state.choiceText}</Card.Text>
+                      <Card.Text className="add-margin">As you turn a corner, you see someone drop a stack of papers that all blow off in different directions. You briefly make eye contact with them, and while you do sympathise with them, you have to make a choice.</Card.Text>
+                      <Card.Text className="add-margin">The roadworks have left you no time to hang about before you need to check in at reception for the interview.</Card.Text>
+                      <Card.Text className="add-margin bold-text">What do you do?</Card.Text>
+                      <Button className="btn btn-light add-margin" onClick={this.handleChoice}>Stop and help collect the papers.</Button>
+                      <Button className="btn btn-light add-margin" onClick={this.handleChoice}>Keep going- you can't be late.</Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              </Row>
+            </Container>
+          }
           {(this.state.clicked && this.state.helpGood) &&
             <HelpOne
               score={this.state.score} />
@@ -105,8 +105,8 @@ class NearOffice extends React.Component {
             <GoTwo
               score={this.state.score} />
           }
-          </header>
-        </>
+        </header>
+      </>
     )
   }
 }
