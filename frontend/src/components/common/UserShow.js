@@ -35,11 +35,8 @@ class UserShow extends React.Component {
   }
 
   render() {
-    // console.log('id', this.props.match.params.id)
-    // console.log(this.state.user.looking_for_work)
     const { user } = this.state
     if (!user.businesses) return null
-    console.log('businesses', this.state.user.businesses)
     return (
       <Container className="">
         <Row className="add-margin-more">

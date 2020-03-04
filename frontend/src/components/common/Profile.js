@@ -12,8 +12,8 @@ import Auth from '../../lib/auth'
 class Profile extends React.Component {
   state = {
     user: {},
-    firstBusiness: {},
-    secondBusiness: {}
+    firstBusiness: '',
+    secondBusiness: ''
   }
 
   componentDidMount = async () => {
@@ -24,7 +24,12 @@ class Profile extends React.Component {
     } catch (err) {
       this.props.history.push('/notfound')
     }
-    this.getBusinesses()
+    if (this.state.user.businesses[1]) {
+      console.log('passed test')
+      return this.getBusinesses()
+    } else {
+      return
+    }
   }
 
   getBusinesses = async () => {
@@ -41,11 +46,11 @@ class Profile extends React.Component {
     if (!this.state.user) return null
     if (!this.state.firstBusiness) return null
     if (!this.state.secondBusiness) return null
+    console.log(this.state.user.businesses[1])
     const { user } = this.state
     const payload = Auth.getPayload().sub
     return (
-
-      <Container className="">
+      <Container>
         <Row className="add-margin-more">
           <Col>
             <h1 className="small-title">Welcome to your profile {user.username}</h1>
@@ -65,13 +70,12 @@ class Profile extends React.Component {
           </Col>
         </Row>
         <hr />
-          {/* {this.state.firstBusiness && */}
-          {/* <> */}
-        <h1 className="small-title">Your favourite businesses from the story</h1>
+          {(this.state.firstBusiness && this.state.secondBusiness) &&
+          <>
+        <h1 className="small-title">Your favourite businesses from the story-</h1>
         <h1 className="small-title">be sure to give them a visit!</h1>
         <br />
         <Row className="justify-content-md-center">
-            <>
             <Col md="auto">
               <Card style={{ width: '18rem' }}>
                 <Card.Img className="business-image" variant="toptop" src={this.state.firstBusiness.image} alt={this.state.firstBusiness.name} />
@@ -92,10 +96,10 @@ class Profile extends React.Component {
                 </Card.Body>
               </Card>
             </Col>
-            </>
         </Row>
+        </>
+        }
       </Container>
-
     )
   }
 

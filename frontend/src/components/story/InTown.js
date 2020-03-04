@@ -72,8 +72,7 @@ class InTown extends React.Component {
             <Card style={{ width: '60rem' }}>
               <Card.Body>
                 <Card.Title className="small-title">Nearly Interview Time.</Card.Title>
-                  <Card.Text>You journey into town and arrive near to the offices where your interview will be held.</Card.Text>
-                  <Card.Text>You mentally trace over code you’ve written, wondering what they will ask you about.</Card.Text>
+                  <Card.Text>You journey into town, mentally tracing over code you’ve written, wondering what they will ask you about.</Card.Text>
                   <Card.Text>Maybe about that function you wrote that builds a grid?</Card.Text>
                   <Card.Text>Maybe about that button that animates little hearts when you click it?</Card.Text>
                   <Card.Text className="add-margin">Recursion?</Card.Text>

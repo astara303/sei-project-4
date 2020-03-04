@@ -120,14 +120,12 @@ class Interview extends React.Component {
                   <Card.Body>
                     <Card.Title className="small-title">It's interview time!</Card.Title>
                     <br />
-                    <Card.Text>
-                      <p>{this.state.questionObj.question}</p>
+                    <Card.Text>{this.state.questionObj.question}</Card.Text>
                       <br />
-                      <p className="code">{this.state.questionObj.codeOne}</p>
+                      <Card.Text className="code">{this.state.questionObj.codeOne}</Card.Text>
                       {this.state.questionObj.codeTwo &&
-                        <p className="code">{this.state.questionObj.codeTwo}</p>
+                        <Card.Text className="code">{this.state.questionObj.codeTwo}</Card.Text>
                       }
-                    </Card.Text>
                     <br />
                     {this.state.combinedAnswers && this.state.combinedAnswers.map(answer => (
                       <Button variant="secondary" className="btn btn-secondary add-margin code" onClick={this.handleGuess} key={answer}>{answer}</Button>
@@ -135,7 +133,7 @@ class Interview extends React.Component {
                     {this.state.playerGuess &&
                   <>
                     <div>
-                      <p>{this.state.playerGuess}</p>
+                    <Card.Text>{this.state.playerGuess}</Card.Text>
                     </div>
                     <Button className="btn btn-light" onClick={this.handleNext}>Next</Button>
                   </>

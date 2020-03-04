@@ -49,15 +49,13 @@ class HelpTwo extends React.Component {
                 <Card style={{ width: '40rem' }}>
                   <Card.Body>
                     <Card.Title className="small-title">You lean down and gather the papers at your feet.</Card.Title>
-                    <Card.Text>
-                      <p className="add-margin">You gather the papers at your feet, along with any that are trying to blow away, and hand them back to a very flustered but grateful person. They thank you, and you double-time it up to the offices.</p>
-                      <p className="add-margin">You don't even take a moment to check your watch before you head into the building and up to reception. You don't want to know how late you are. But you catch a glimpse of the clock above the receptionist, and you're five minutes late.</p>
-                      <p className="add-margin">Not horrible, but not great. You wonder for a moment if they won't see you for the interview if you weren't on time.</p>
-                      <p className="add-margin">Someone turns the corner. "{this.state.user.first_name}?"</p>
-                      <p className="add-margin">"That's me," you say with a smile. They give you a half-smile back.</p>
-                      <p className="add-margin">"We should get started then. Would you mind following me into this office? We'll ask you a few questions to guage your understanding of some basic concepts. The questions will be snippets of code and we'll ask you to explain what the result would or should be. Is that ok?"</p>
-                      <p className="add-margin">"Of course. I'll follow you."</p>
-                    </Card.Text>
+                      <Card.Text className="add-margin">You gather the papers at your feet, along with any that are trying to blow away, and hand them back to a very flustered but grateful person. They thank you, and you double-time it up to the offices.</Card.Text>
+                      <Card.Text className="add-margin">You don't even take a moment to check your watch before you head into the building and up to reception. You don't want to know how late you are. But you catch a glimpse of the clock above the receptionist, and you're five minutes late.</Card.Text>
+                      <Card.Text className="add-margin">Not horrible, but not great. You wonder for a moment if they won't see you for the interview if you weren't on time.</Card.Text>
+                      <Card.Text className="add-margin">Someone turns the corner. "{this.state.user.first_name}?"</Card.Text>
+                      <Card.Text className="add-margin">"That's me," you say with a smile. They give you a half-smile back.</Card.Text>
+                      <Card.Text className="add-margin">"We should get started then. Would you mind following me into this office? We'll ask you a few questions to guage your understanding of some basic concepts. The questions will be snippets of code and we'll ask you to explain what the result would or should be. Is that ok?"</Card.Text>
+                      <Card.Text className="add-margin">"Of course. I'll follow you."</Card.Text>
                     <div>
                       <Button className="btn btn-light add-margin" onClick={this.handleClick}>Continue</Button>
                     </div>

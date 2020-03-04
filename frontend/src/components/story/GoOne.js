@@ -49,13 +49,11 @@ class GoOne extends React.Component {
                 <Card style={{ width: '40rem' }}>
                   <Card.Body>
                     <Card.Title className="small-title">You enter the office building and breathe a sigh of relief.</Card.Title>
-                    <Card.Text>
-                      <p className="add-margin">You're perfectly on time. You head to reception to check in, and almost as soon as you've done so, someone turns the corner.</p>
-                      <p className="add-margin">"{this.state.user.first_name}?"</p>
-                      <p className="add-margin">"Hello! That's me," you respond. They smile back at you.</p>
-                      <p className="add-margin">"Thanks for being on time! Would you mind following me into this office? And we'll ask you some questions to guage your understanding of some basic concepts. The questions will be snippets of code and we'll ask you to explain what the result would or should be. Does that sound good?"</p>
-                      <p className="add-margin">"Definitely. Let's do it."</p>
-                    </Card.Text>
+                      <Card.Text className="add-margin">You're perfectly on time. You head to reception to check in, and almost as soon as you've done so, someone turns the corner.</Card.Text>
+                      <Card.Text className="add-margin">"{this.state.user.first_name}?"</Card.Text>
+                      <Card.Text className="add-margin">"Hello! That's me," you respond. They smile back at you.</Card.Text>
+                      <Card.Text className="add-margin">"Thanks for being on time! Would you mind following me into this office? And we'll ask you some questions to guage your understanding of some basic concepts. The questions will be snippets of code and we'll ask you to explain what the result would or should be. Does that sound good?"</Card.Text>
+                      <Card.Text className="add-margin">"Definitely. Let's do it."</Card.Text>
                     <div>
                       <Button className="btn btn-light add-margin" onClick={this.handleClick}>Continue</Button>
                     </div>

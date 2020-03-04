@@ -36,7 +36,6 @@ class InterviewUnsuccessful extends React.Component {
             <Card style={{ width: '60rem' }}>
               <Card.Body>
                 <Card.Title className="small-title">It's been a few days since the interview.</Card.Title>
-                <Card.Text>
                 <Card.Text className="add-margin">Your phone rings. You answer. A familiar voice is on the other end. </Card.Text>
                 <Card.Text className="interview-margin">"Hello, is this {this.state.user.first_name}?"</Card.Text>
                 <Card.Text className="interview-margin">"Yes, it is."</Card.Text>
@@ -51,7 +50,6 @@ class InterviewUnsuccessful extends React.Component {
                 <Card.Text className="add-margin">Happy interviewing!</Card.Text>
                   <Link to={`/profile/${Auth.getPayload().sub}`}><Button className="btn btn-light add-margin">Go to profile</Button></Link>
                   <Link to={'/interviewers'}><Button className="btn btn-light add-margin">See users</Button></Link>
-                </Card.Text>
               </Card.Body>
             </Card>
           </Col>
