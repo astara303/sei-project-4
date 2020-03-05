@@ -7,7 +7,6 @@ import Auth from '../../lib/auth'
 
 const UserCard = ({ username, id, profile_image, location, payload }) => (
   <div key={id}>
-    {console.log('payload is', payload)}
     <Col md="auto">
       <Card style={{ width: '18rem' }}>
         <Link to={(Auth.getPayload().sub === id) ? `/profile/${payload}` : `/interviewers/${id}/`}>

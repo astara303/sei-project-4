@@ -19,7 +19,7 @@ class Profile extends React.Component {
   componentDidMount = async () => {
     const payload = Auth.getPayload().sub
     try {
-      const res = await axios.get(`/api/users/${payload}/`)
+      const res = await axios.get(`/api/users/${payload}`)
       this.setState({ user: res.data })
     } catch (err) {
       this.props.history.push('/notfound')

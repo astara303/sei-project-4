@@ -21,7 +21,7 @@ class WakeUp extends React.Component {
   async componentDidMount() {
     const payload = Auth.getPayload().sub
     try {
-      const res = await axios.get('/api/businesses/')
+      const res = await axios.get('/api/businesses')
       const user = await axios.get(`/api/users/${payload}`)
       const categoryArray = res.data.filter(business => business.category.includes('outfit'))
       this.setState({ businesses: categoryArray, user: user.data })

@@ -16,7 +16,7 @@ class UserIndex extends React.Component {
 
   componentDidMount = async () => {
     try {
-      const res = await axios.get('/api/users/')
+      const res = await axios.get('/api/users')
       this.setState({ users: res.data, searchData: res.data })
     } catch (err) {
       console.log(err)

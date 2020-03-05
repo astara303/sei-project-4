@@ -25,7 +25,7 @@ class ProfileEdit extends React.Component {
   async componentDidMount() {
     const payload = Auth.getPayload().sub
     try {
-      const res = await axios.get(`/api/users/${payload}/`)
+      const res = await axios.get(`/api/users/${payload}`)
       //   {
       //   headers: { Authorization: `Bearer ${Auth.getToken()}` }
       //   })

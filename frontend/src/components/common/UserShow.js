@@ -16,7 +16,7 @@ class UserShow extends React.Component {
   async componentDidMount() {
     const userId = this.props.match.params.id
     try {
-      const res = await axios.get(`/api/users/${userId}/`)
+      const res = await axios.get(`/api/users/${userId}`)
       this.setState({ user: res.data })
     } catch (err) {
       this.props.history.push('/notfound')

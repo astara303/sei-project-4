@@ -17,12 +17,10 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from .views import index
 
-
 urlpatterns = [
-    re_path(r'^.*$', index),
-    path('admin/', admin.site.urls),
+    path('django-admin/', admin.site.urls),
+    path('admin/', include('rest_framework.urls')),
+    path('api/', include('businesses.urls')),
     path('api/', include('jwt_auth.urls')),
-    path('api/users/', include('jwt_auth.urls')),
-    path('api/businesses/', include('businesses.urls')),
-    path('api/questions/', include('questions.urls'))
+    re_path(r'^.*$', index)
 ]
