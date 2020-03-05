@@ -66,15 +66,6 @@ class InTown extends React.Component {
     // correct background
     return (
       <header className="intown-masthead masthead">
-<<<<<<< HEAD
-      <Container>
-        <Row className="justify-content-md-center">
-          <Col md="auto">
-            <Card style={{ width: '60rem' }}>
-              <Card.Body>
-                <Card.Title className="small-title">Nearly Interview Time.</Card.Title>
-                  <Card.Text>You journey into town, mentally tracing over code you’ve written, wondering what they will ask you about.</Card.Text>
-=======
         <Container>
           <Row className="justify-content-md-center">
             <Col md="auto">
@@ -83,7 +74,6 @@ class InTown extends React.Component {
                   <Card.Title className="small-title">Nearly Interview Time.</Card.Title>
                   <Card.Text>You journey into town and arrive near to the offices where your interview will be held.</Card.Text>
                   <Card.Text>You mentally trace over code you’ve written, wondering what they will ask you about.</Card.Text>
->>>>>>> development
                   <Card.Text>Maybe about that function you wrote that builds a grid?</Card.Text>
                   <Card.Text>Maybe about that button that animates little hearts when you click it?</Card.Text>
                   <Card.Text className="add-margin">Recursion?</Card.Text>
