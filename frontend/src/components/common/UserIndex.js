@@ -35,7 +35,7 @@ class UserIndex extends React.Component {
 
   render() {
     // if (!this.payload) return null
-    // if (!this.state.users) return null
+    if (!this.state.users.length) return null
     const payload = Auth.getPayload().sub
     return (
       <Container>
