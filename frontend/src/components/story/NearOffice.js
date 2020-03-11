@@ -68,7 +68,6 @@ class NearOffice extends React.Component {
   render() {
     return (
       <>
-        {/* correct background */}
         <header className="masthead nearoffice-masthead extra-masthead">
           {!this.state.clicked &&
             <Container>

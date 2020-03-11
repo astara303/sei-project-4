@@ -1,7 +1,6 @@
 import React from 'react'
 import axios from 'axios'
 import Container from 'react-bootstrap/Container'
-// import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 
 import UserCard from './UserCard'
@@ -19,22 +18,23 @@ class UserIndex extends React.Component {
       const res = await axios.get('/api/users/')
       this.setState({ users: res.data, searchData: res.data })
     } catch (err) {
-      console.log(err)
+      this.props.history.push('/notfound')
     }
   }
 
+  //function for the search bar
   basicSearchFunction = (e) => {
     this.setState({ searchTerm: e.target.value })
 
   }
 
+  //prepare users array to be filtered, and filter when searching
   filterUsers = () => {
     const searchTerm = new RegExp(this.state.searchTerm, 'i')
     return this.state.users.filter(user => searchTerm.test(user.location))
   }
 
   render() {
-    // if (!this.payload) return null
     const payload = Auth.getPayload().sub
     return (
       <Container>

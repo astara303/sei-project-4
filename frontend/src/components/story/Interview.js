@@ -10,12 +10,9 @@ import InterviewUnsuccessful from './InterviewUnsuccessful'
 
 class Interview extends React.Component {
   state = {
-    //starts at 0 or 1 depending on choice and luck
     score: this.props.score,
     questionNum: 0,
-    // holds all results from the one API call. Never changes.
-    results: '',
-    //loads the current question using the results array and the questionNum as it's index
+    //holds the current question for display using the results array and the questionNum as it's index
     questionObj: {
       question: '',
       codeOne: '',
@@ -23,7 +20,9 @@ class Interview extends React.Component {
       correctAnswer: '',
       incorrectAnswers: []
     },
+    //an array of randomised correct an incorrect answers
     combinedAnswers: '',
+    // holds all interview questions in an array. As we move through the array, we display a question one at a time
     data: [
       {
         question: 'What is the value of b?',
@@ -59,6 +58,7 @@ class Interview extends React.Component {
     endInterview: false
   }
 
+  //send the first item in the data array to the quesionobj object
   componentDidMount() {
     const questionObj = {
       question: this.state.data[0].question,
@@ -72,6 +72,8 @@ class Interview extends React.Component {
     this.setState({ questionObj, combinedAnswers })
   }
 
+  //check if the player guess is the same as the correct answer to the question
+  //saves "correct" or "incorrect" as playerGuess in state
   handleGuess = e => {
     if (this.state.playerGuess) return
     let playerGuess = ''
@@ -85,6 +87,7 @@ class Interview extends React.Component {
     this.setState({ playerGuess, score })
   }
 
+  //moves to the next question in the data array, unless all 4 questions have been answered, in which case endInterview is true
   handleNext = () => {
     let endInterview = this.state.endInterview
     if (this.state.questionNum === 3) {
@@ -107,10 +110,12 @@ class Interview extends React.Component {
     }
   }
 
+  //if the score is greater than or equal to 4, the user passes the interview. If less than 4, they do not pass
   render() {
+    const { questionObj } = this.state
+    const { playerGuess } = this.state
     return (
       <>
-        {/* correct background */}
         <header className="masthead interview-masthead">
           {!this.state.endInterview &&
             <Container>
@@ -121,21 +126,21 @@ class Interview extends React.Component {
                       <Card.Title className="small-title">It's interview time!</Card.Title>
                       <br />
                       <Card.Text>
-                        <p>{this.state.questionObj.question}</p>
+                        <p>{questionObj.question}</p>
                         <br />
-                        <p className="code">{this.state.questionObj.codeOne}</p>
-                        {this.state.questionObj.codeTwo &&
-                          <p className="code">{this.state.questionObj.codeTwo}</p>
+                        <p className="code">{questionObj.codeOne}</p>
+                        {questionObj.codeTwo &&
+                          <p className="code">{questionObj.codeTwo}</p>
                         }
                       </Card.Text>
                       <br />
                       {this.state.combinedAnswers && this.state.combinedAnswers.map(answer => (
                         <Button variant="secondary" className="btn btn-secondary add-margin code" onClick={this.handleGuess} key={answer}>{answer}</Button>
                       ))}
-                      {this.state.playerGuess &&
+                      {playerGuess &&
                         <>
                           <div>
-                            <p>{this.state.playerGuess}</p>
+                            <p>{playerGuess}</p>
                           </div>
                           <Button className="btn btn-light" onClick={this.handleNext}>Next</Button>
                         </>

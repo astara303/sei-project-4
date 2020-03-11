@@ -36,11 +36,11 @@ class HelpOne extends React.Component {
     this.setState({ interview })
   }
 
+  //when the user clicks continue, the interview is rendered and the score is passed down
   render() {
-    console.log(this.state.score)
+    const { user } = this.state
     return (
       <>
-        {/* correct background */}
         <header className="helpone-masthead masthead extra-masthead">
           {!this.state.interview &&
             <Container>
@@ -53,7 +53,7 @@ class HelpOne extends React.Component {
                       <Card.Text className="add-margin">You’re reminded what’s at stake, but glad that you stopped to help. You scoop up the remaining pages scattered about the sidewalk and hand them back to the grateful person.</Card.Text>
                       <Card.Text className="add-margin">You end up walking together into the building. They look at you, surprised. They ask what you're there for.</Card.Text>
                       <Card.Text className="add-margin">"I'm here to interview for a developer role."</Card.Text>
-                      <Card.Text className="add-margin">"Wait, are you {this.state.user.first_name}?"</Card.Text>
+                      <Card.Text className="add-margin">"Wait, are you {user.first_name}?"</Card.Text>
                       <Card.Text className="add-margin">You confirm that you are, and they smile.</Card.Text>
                       <Card.Text className="add-margin">"That's so great. I'll be interviewing you today. I'm sorry about my mess outside but so grateful you stopped to help. This way we aren't getting started too late!"</Card.Text>
                       <Card.Text className="add-margin">"No problem! I was happy to help."</Card.Text>

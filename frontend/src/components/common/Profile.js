@@ -11,27 +11,28 @@ import Auth from '../../lib/auth'
 
 class Profile extends React.Component {
   state = {
-    user: {},
+    user: [],
     firstBusiness: '',
     secondBusiness: ''
   }
 
+  //we call the getBusinesses function only if they have chosen both their outfit and cafe from the story
   componentDidMount = async () => {
     const payload = Auth.getPayload().sub
     try {
       const res = await axios.get(`/api/users/${payload}/`)
       this.setState({ user: res.data })
+      if (res.data.businesses.length === 2) {
+        return this.getBusinesses()
+      } else {
+        return
+      }
     } catch (err) {
       this.props.history.push('/notfound')
     }
-    if (this.state.user.businesses[1]) {
-      console.log('passed test')
-      return this.getBusinesses()
-    } else {
-      return
-    }
   }
 
+  //the user will only ever have 2 businesses attached to their model, so we call them here
   getBusinesses = async () => {
     try {
       const firstBusiness = await axios.get(`/api/businesses/${this.state.user.businesses[0]}`)
@@ -44,10 +45,9 @@ class Profile extends React.Component {
 
   render() {
     if (!this.state.user) return null
-    if (!this.state.firstBusiness) return null
-    if (!this.state.secondBusiness) return null
-    console.log(this.state.user.businesses[1])
     const { user } = this.state
+    const { firstBusiness } = this.state
+    const { secondBusiness } = this.state
     const payload = Auth.getPayload().sub
     return (
       <Container>
@@ -56,7 +56,6 @@ class Profile extends React.Component {
             <h1 className="small-title">Welcome to your profile {user.username}</h1>
           </Col>
         </Row>
-
         <Row className="justify-content-md-center">
           <Col>
             <img className="profile-image" src={user.profile_image} alt={user.first_name} />
@@ -70,7 +69,7 @@ class Profile extends React.Component {
           </Col>
         </Row>
         <hr />
-          {(this.state.firstBusiness && this.state.secondBusiness) &&
+          {(firstBusiness && secondBusiness) &&
           <>
         <h1 className="small-title">Your favourite businesses from the story-</h1>
         <h1 className="small-title">be sure to give them a visit!</h1>
@@ -78,21 +77,19 @@ class Profile extends React.Component {
         <Row className="justify-content-md-center">
             <Col md="auto">
               <Card style={{ width: '18rem' }}>
-                <Card.Img className="business-image" variant="toptop" src={this.state.firstBusiness.image} alt={this.state.firstBusiness.name} />
+                <Card.Img className="business-image" variant="toptop" src={firstBusiness.image} alt={firstBusiness.name} />
                 <Card.Body>
-                  <Card.Title>{this.state.firstBusiness.name}</Card.Title>
-                  <Card.Text>{this.state.firstBusiness.category}</Card.Text>
+                  <Card.Title>{firstBusiness.name}</Card.Title>
+                  <Card.Text>{firstBusiness.category}</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
-
-
             <Col md="auto">
               <Card style={{ width: '18rem' }}>
-                <Card.Img className="business-image" variant="toptop" src={this.state.secondBusiness.image} alt={this.state.secondBusiness.name} />
+                <Card.Img className="business-image" variant="toptop" src={secondBusiness.image} alt={secondBusiness.name} />
                 <Card.Body>
-                  <Card.Title>{this.state.secondBusiness.name}</Card.Title>
-                  <Card.Text>{this.state.secondBusiness.category}</Card.Text>
+                  <Card.Title>{secondBusiness.name}</Card.Title>
+                  <Card.Text>{secondBusiness.category}</Card.Text>
                 </Card.Body>
               </Card>
             </Col>

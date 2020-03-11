@@ -4,17 +4,15 @@ import Button from 'react-bootstrap/Button'
 
 import Auth from '../../lib/auth'
 
-//show register prompt if not regsitered/logged in: need register/login link buttons
-//show 'begin your story' button if you are > look at quiz homepage 
+//displays register or login prompts if not logged in
+//show 'begin your story' button if you are logged in
 
 const Home = () => (
   <header className="homepage-masthead masthead">
     <div className="h-100 row align-items-center">
       <div className="col">
         <h1 className="main-title">Let's Interview!</h1>
-
         {!Auth.isAuthenticated() &&
-          // <h2 className="sub">Please register or login to play</h2>
           <>
             <Link to={'/register'}>
               <Button className="btn btn-light add-margin" size="lg">Register or</Button>
@@ -29,7 +27,6 @@ const Home = () => (
             <Button className="btn btn-light" size="lg">Start your story</Button>
           </Link>
         }
-
       </div>
     </div>
   </header>

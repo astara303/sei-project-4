@@ -28,7 +28,6 @@ class InterviewUnsuccessful extends React.Component {
   render() {
     if (!this.state.user) return null
     return (
-      // correct background
       <header className="plain-background">
         <Container>
           <Row className="justify-content-md-center">

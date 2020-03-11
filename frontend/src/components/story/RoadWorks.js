@@ -57,15 +57,13 @@ class RoadWorks extends React.Component {
     }
   }
 
-  //render and pass the first lines of the story to near office
-  //do I need to send the other text options through as empty strings when not using them in render?
-
+  //when user is ready to continue, NearOffice component is rendered with the appropriate text that was passed down, and the score is passed down. RoadWorks is hidden
   render() {
+    const { clicked } = this.state
     return (
       <>
-        {/* correct background */}
         <header className="masthead roadworks-masthead">
-          {!this.state.clicked &&
+          {!clicked &&
             <Container>
               <Row className="justify-content-md-center">
                 <Col md="auto">
@@ -85,17 +83,17 @@ class RoadWorks extends React.Component {
             </Container>
           }
           <>
-            {((this.state.clicked && this.state.shortcutGood) || (this.state.clicked && this.state.detourGood)) &&
+            {((clicked && this.state.shortcutGood) || (clicked && this.state.detourGood)) &&
               <NearOffice
                 choiceText={this.state.goodText}
                 score={this.state.goodScore} />
             }
-            {(this.state.clicked && this.state.shortcutBad) &&
+            {(clicked && this.state.shortcutBad) &&
               <NearOffice
                 choiceText={this.state.shortcutBadText}
                 score={this.state.badScore} />
             }
-            {(this.state.clicked && this.state.detourBad) &&
+            {(clicked && this.state.detourBad) &&
               <NearOffice
                 choiceText={this.state.detourBadText}
                 score={this.state.badScore} />

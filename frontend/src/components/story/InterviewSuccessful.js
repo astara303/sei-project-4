@@ -28,7 +28,6 @@ class InterviewSuccessful extends React.Component {
   render() {
     if (!this.state.user) return null
     return (
-      // correct background
       <header className="plain-background">
         <Container>
           <Row className="justify-content-md-center">
@@ -38,7 +37,7 @@ class InterviewSuccessful extends React.Component {
                   <Card.Title className="small-title">It's been a few days since the interview.</Card.Title>
                   <Card.Text>
                     <Card.Text className="add-margin">Your phone rings. You answer. A familiar voice is on the other end.</Card.Text>
-                    <Card.Text className="interview-margin">"Hello, is this {this.state.user.first_name}?"</Card.Text>
+                    <Card.Text className="interview-margin">"Hello, is this {this.state.user.username}?"</Card.Text>
                     <Card.Text className="interview-margin">"Yes, it is."</Card.Text>
                     <Card.Text className="interview-margin">"Hello there! I wanted to thank you so much for interviewing with our company. We really enjoyed meeting you-" Your heart doesn't know whether to fly or sink. Is this a gentle let down or are they setting you up for good news? They continue, "...and we would be so pleased to offer you a place on our team." Your mind goes blank. Is this what it feels like to go into shock? A strange numbness washes over you.</Card.Text>
                     <Card.Text className="interview-margin">As the feeling comes back to your fingers, you're not sure how long you've been quiet. Wow, that's great, thank you so much!" you manage to sputter out.</Card.Text>

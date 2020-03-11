@@ -30,19 +30,16 @@ class InTown extends React.Component {
     }
   }
 
+  //
   handleClick = (e) => {
     let clicked = this.state.clicked
-    // console.log(e.target.name)
     const id = e.target.name
     this.setState({ id })
     if (clicked === false) {
       clicked = true
       const chosenBusiness = this.state.businesses[id]
       const user = { ...this.state.user, businesses: [...this.state.user.businesses, chosenBusiness.id] }
-      // console.log(user)
       this.setState({ clicked, user })
-      // console.log(this.state.user)
-      // console.log(chosenBusiness)
     } else {
       return
     }
@@ -62,8 +59,6 @@ class InTown extends React.Component {
   }
 
   render() {
-    console.log(this.state.user)
-    // correct background
     return (
       <header className="intown-masthead masthead">
         <Container>

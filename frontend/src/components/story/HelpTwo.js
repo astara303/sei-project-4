@@ -36,11 +36,11 @@ class HelpTwo extends React.Component {
     this.setState({ interview })
   }
 
+  //when the user clicks continue, the interview is rendered and the score is passed down
   render() {
-    console.log(this.state.score)
+    const { user } = this.state
     return (
       <>
-        {/* correct background */}
         <header className="helptwo-masthead masthead">
           {!this.state.interview &&
             <Container>
@@ -53,7 +53,7 @@ class HelpTwo extends React.Component {
                         <p className="add-margin">You gather the papers at your feet, along with any that are trying to blow away, and hand them back to a very flustered but grateful person. They thank you, and you double-time it up to the offices.</p>
                         <p className="add-margin">You don't even take a moment to check your watch before you head into the building and up to reception. You don't want to know how late you are. But you catch a glimpse of the clock above the receptionist, and you're five minutes late.</p>
                         <p className="add-margin">Not horrible, but not great. You wonder for a moment if they won't see you for the interview if you weren't on time.</p>
-                        <p className="add-margin">Someone turns the corner. "{this.state.user.first_name}?"</p>
+                        <p className="add-margin">Someone turns the corner. "{user.username}?"</p>
                         <p className="add-margin">"That's me," you say with a smile. They give you a half-smile back.</p>
                         <p className="add-margin">"We should get started then. Would you mind following me into this office? We'll ask you a few questions to guage your understanding of some basic concepts. The questions will be snippets of code and we'll ask you to explain what the result would or should be. Is that ok?"</p>
                         <p className="add-margin">"Of course. I'll follow you."</p>
