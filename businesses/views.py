@@ -18,7 +18,7 @@ class BusinessListView(APIView):
 class BusinessDetailView(APIView):
 
     def get(self, _request, pk):
-
+      print('hello request')
       try:
           business = Business.objects.get(pk=pk)
           serialized_business = BusinessSerializer(business)

@@ -28,7 +28,8 @@ class Profile extends React.Component {
         return
       }
     } catch (err) {
-      this.props.history.push('/notfound')
+      // this.props.history.push('/notfound')
+      console.log(err)
     }
   }
 
