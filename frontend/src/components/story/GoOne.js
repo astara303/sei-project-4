@@ -38,11 +38,11 @@ class GoOne extends React.Component {
 
   //when the user clicks continue, the interview is rendered and the score is passed down
   render() {
-    const { user } = this.state
+    const { user, interview } = this.state
     return (
       <>
         <header class="goone-masthead">
-          {!this.state.interview &&
+          {!interview &&
             <Container>
               <Row className="justify-content-md-center">
                 <Col md="auto">
@@ -53,7 +53,7 @@ class GoOne extends React.Component {
                         <p className="add-margin">You're perfectly on time. You head to reception to check in, and almost as soon as you've done so, someone turns the corner.</p>
                         <p className="add-margin">"{user.username}?"</p>
                         <p className="add-margin">"Hello! That's me," you respond. They smile back at you.</p>
-                        <p className="add-margin">"Thanks for being on time! Would you mind following me into this office? And we'll ask you some questions to guage your understanding of some basic concepts. The questions will be snippets of code and we'll ask you to explain what the result would or should be. Does that sound good?"</p>
+                        <p className="add-margin">"Thanks for being on time! Would you mind following me into this office? And we'll ask you a few questions to guage your understanding of some basic concepts. The questions will be snippets of code and we'll ask you to explain what the result would or should be. Does that sound good?"</p>
                         <p className="add-margin">"Definitely. Let's do it."</p>
                       </Card.Text>
                       <div>
@@ -65,7 +65,7 @@ class GoOne extends React.Component {
               </Row>
             </Container>
           }
-          {this.state.interview &&
+          {interview &&
             <Interview score={this.state.score} />
           }
         </header>

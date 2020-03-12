@@ -38,11 +38,11 @@ class HelpTwo extends React.Component {
 
   //when the user clicks continue, the interview is rendered and the score is passed down
   render() {
-    const { user } = this.state
+    const { user, interview } = this.state
     return (
       <>
         <header className="helptwo-masthead masthead">
-          {!this.state.interview &&
+          {!interview &&
             <Container>
               <Row className="justify-content-md-center">
                 <Col md="auto">
@@ -50,7 +50,7 @@ class HelpTwo extends React.Component {
                     <Card.Body>
                       <Card.Title className="small-title">You lean down and gather the papers at your feet.</Card.Title>
                       <Card.Text>
-                        <p className="add-margin">You gather the papers at your feet, along with any that are trying to blow away, and hand them back to a very flustered but grateful person. They thank you, and you double-time it up to the offices.</p>
+                        <p className="add-margin">You grab any that are trying to blow away, and hand them back to a very flustered but grateful person. They thank you, and you double-time it up to the offices.</p>
                         <p className="add-margin">You don't even take a moment to check your watch before you head into the building and up to reception. You don't want to know how late you are. But you catch a glimpse of the clock above the receptionist, and you're five minutes late.</p>
                         <p className="add-margin">Not horrible, but not great. You wonder for a moment if they won't see you for the interview if you weren't on time.</p>
                         <p className="add-margin">Someone turns the corner. "{user.username}?"</p>
@@ -67,7 +67,7 @@ class HelpTwo extends React.Component {
               </Row>
             </Container>
           }
-          {this.state.interview &&
+          {interview &&
             <Interview score={this.state.score} />
           }
         </header>

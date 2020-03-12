@@ -17,7 +17,7 @@ class RoadWorks extends React.Component {
     badScore: 0,
     clicked: false,
     goodText: 'Success! The path you chose didn\'t save you any time, but you didn\'t lose any either.',
-    detourBadText: 'You wait for your turn to push in between everyone, and make your way down the road. With one eye on your GPS, you see that you passed your turn long ago, but there is nowhere to escape this fencing! You continue along the detour until finally you arrive on the other side of the roadworks. You cross the street and are not sure how long it will take you to back-track. Eventually you near the offices, but not without breaking a sweat first.',
+    detourBadText: 'You wait for your turn to push in between everyone, and make your way down the road. With one eye on your GPS, you can see that you passed your turn long ago, but there is nowhere to escape this fencing! You continue along the detour until finally you arrive on the other side of the roadworks. You cross the street and are not sure how long it will take you to back-track. Eventually you near the offices, but not without breaking a sweat first.',
     shortcutBadText: 'You escape the throng of people making their way through the detour and head off along the shortcut. You arrive at a building that looks very... building-y, considering your phone is telling you that a road passes through here. Unsure if you missed a tunnel somewhere, you check your surroundings for any clue. You\'re losing time and there\'s no way to access this shortcut that you can see, so you head back to the roadworks and take the detour, but not without breaking a sweat first.'
   }
 
@@ -27,9 +27,9 @@ class RoadWorks extends React.Component {
   one bad option (shortcut says there's a way through when there isn't. Must backtrack and lose time.)
 
   detour:
-  one good option (same as shortcut good?)
-  one bad option (same as shortcut bad?)
-*/
+  one good option (detour gets you there when you planned)
+  one bad option (the detour takes you past the office and you have to backtrack)
+  */
 
   handleChoice = (e) => {
     if (e.target.textContent === 'Take the shortcut.') {

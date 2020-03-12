@@ -18,6 +18,8 @@ class WakeUp extends React.Component {
     user: []
   }
 
+  //GETS the data from the businesses model and filters by "outfit"
+  //GETS the user data so that we can spread the chosen business into the empty businesses array in the user model on handleClick and handleSubmit
   async componentDidMount() {
     const payload = Auth.getPayload().sub
     try {
@@ -69,8 +71,8 @@ class WakeUp extends React.Component {
                 <Card.Body>
                   <Card.Title className="small-title">Wake up.</Card.Title>
                   <Card.Text>Today's the day. It’s the morning of your interview.</Card.Text>
-                  <Card.Text>What time is it? You check the clock. Two minutes until your alarm goes off. </Card.Text>
-                  <Card.Text>You close your eyes and try to relax, but so many thoughts begin banging around inside your skull.</Card.Text>
+                  <Card.Text>What time is it? You check the clock. Two minutes until your alarm goes off.</Card.Text>
+                  <Card.Text>You close your eyes and try to relax, but so many thoughts start banging around inside your skull.</Card.Text>
                   <Card.Text>Today could change your life.</Card.Text>
                   <Card.Text>What if you get this job? It’s your dream to work for a company like this.</Card.Text>
                   <Card.Text>What if you blow it?</Card.Text>

@@ -38,11 +38,11 @@ class HelpOne extends React.Component {
 
   //when the user clicks continue, the interview is rendered and the score is passed down
   render() {
-    const { user } = this.state
+    const { user, interview } = this.state
     return (
       <>
         <header className="helpone-masthead masthead extra-masthead">
-          {!this.state.interview &&
+          {!interview &&
             <Container>
               <Row className="justify-content-md-center">
                 <Col md="auto">
@@ -68,7 +68,7 @@ class HelpOne extends React.Component {
               </Row>
             </Container>
           }
-          {this.state.interview &&
+          {interview &&
             <Interview score={this.state.score} />
           }
         </header>

@@ -27,11 +27,11 @@ class NearOffice extends React.Component {
 
   /* 
   stop and help:
-  one good option (interviewer recognises you, +1 starting score)
+  one good option (interviewer recognises you, +1 score)
   one bad option (you are late)
 
   keep going:
-  one good option (you are on time, +1 starting score)
+  one good option (you are on time, +1 score)
   one bad option (interviewer recognises that you didnt help)
 */
 
@@ -64,8 +64,9 @@ class NearOffice extends React.Component {
     }
   }
 
-
+  //Both choices have two results. One of those four results will be rendered and the score passed down
   render() {
+    const { clicked } = this.state
     return (
       <>
         <header className="masthead nearoffice-masthead extra-masthead">
@@ -88,19 +89,19 @@ class NearOffice extends React.Component {
               </Row>
             </Container>
           }
-          {(this.state.clicked && this.state.helpGood) &&
+          {(clicked && this.state.helpGood) &&
             <HelpOne
               score={this.state.score} />
           }
-          {(this.state.clicked && this.state.helpBad) &&
+          {(clicked && this.state.helpBad) &&
             <HelpTwo
               score={this.state.score} />
           }
-          {(this.state.clicked && this.state.keepGoingGood) &&
+          {(clicked && this.state.keepGoingGood) &&
             <GoOne
               score={this.state.score} />
           }
-          {(this.state.clicked && this.state.keepGoingBad) &&
+          {(clicked && this.state.keepGoingBad) &&
             <GoTwo
               score={this.state.score} />
           }
