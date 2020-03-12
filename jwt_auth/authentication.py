@@ -12,16 +12,16 @@ class JWTAuthentication(BasicAuthentication):
 
         header = request.headers.get('Authorization')
 
-        if not header:
+        if not header: # checking if there is no header 
             return None
 
-        if header.startswith('Basic'): # Add this line in
+        if header.startswith('Basic'): # checking if header starts with 'Basic'
             return None
             
-        if not header.startswith('Bearer'):
+        if not header.startswith('Bearer'): # check if header doesn't start with 'Bearer'
             raise PermissionDenied({'message': 'Invalid authorization header'})
         
-        token = header.replace('Bearer ', '')
+        token = header.replace('Bearer ', '') # removing the start of the users token and storing it in a token variable to easily use 
         
         try:
             payload = jwt.decode(token, settings.SECRET_KEY, algorithms=['HS256'])

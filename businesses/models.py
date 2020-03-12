@@ -1,8 +1,7 @@
 # pylint: disable=no-member
 from django.db import models
-# from django.contrib.auth import get_user_model
-# User = get_user_model() # getting the user model 
 
+# here we are creating our business model with relevant fields - we have added longitude and latitude for potentially using mapbox functionality
 class Business(models.Model):
   name = models.CharField(max_length=100)
   image = models.CharField(max_length=500)

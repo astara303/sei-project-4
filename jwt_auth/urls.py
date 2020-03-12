@@ -8,6 +8,4 @@ urlpatterns = [
     path('users', UserListView.as_view()),
     path('users/<int:pk>/edit', UserProfileView.as_view()),
     path('users/<int:pk>', UserProfileView.as_view())
-    # path('<int:pk>/comments/', CommentListView.as_view()),
-    # path('<int:pk>/comments/<int:comment_pk>/', CommentDetailView.as_view())
 ] 
