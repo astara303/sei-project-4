@@ -7,9 +7,8 @@ import ImageUpload from './ImageUpload'
 const UserForm = ({ data, handleChange, handleSubmit, handleChangeImage }) => {
   return (
     <Form onSubmit={handleSubmit}>
-
+      
       <Form.Group>
-
         <Form.Label>Username</Form.Label>
         <Form.Control
           placeholder="Username"

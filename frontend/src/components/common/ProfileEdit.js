@@ -25,12 +25,8 @@ class ProfileEdit extends React.Component {
   async componentDidMount() {
     const payload = Auth.getPayload().sub
     try {
-      const res = await axios.get(`/api/users/${payload}`)
-      //   {
-      //   headers: { Authorization: `Bearer ${Auth.getToken()}` }
-      //   })
+      const res = await axios.get(`/api/users/${payload}/`)
       this.setState({ data: res.data })
-      console.log(this.state.data.looking_for_work)
     } catch (err) {
       this.props.history.push('/notfound')
     }
@@ -61,7 +57,6 @@ class ProfileEdit extends React.Component {
     this.setState({ data })
   }
 
-
   render() {
     return (
       <Container>
@@ -70,28 +65,23 @@ class ProfileEdit extends React.Component {
             <h1 className="small-title">Edit your profile</h1>
           </Col>
         </Row>
-
         <Row className="justify-content-md-center">
           <Col md="auto">
             <Card style={{ width: '25rem' }}>
               <Card.Body>
-
                 <UserForm
                   handleChange={this.handleChange}
                   handleSubmit={this.handleSubmit}
                   handleChangeImage={this.handleChangeImage}
                   data={this.state.data}
                 />
-
               </Card.Body>
             </Card>
           </Col>
         </Row>
       </Container>
     )
-
   }
-
 }
 
 export default ProfileEdit

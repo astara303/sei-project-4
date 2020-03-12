@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
 
 class UserShow extends React.Component {
   state = {
@@ -13,17 +12,23 @@ class UserShow extends React.Component {
     secondBusiness: ''
   }
 
+  //we call the getBusinesses function only if they have chosen both their outfit and cafe from the story
   async componentDidMount() {
     const userId = this.props.match.params.id
     try {
       const res = await axios.get(`/api/users/${userId}`)
       this.setState({ user: res.data })
+      if (res.data.businesses.length === 2) {
+        return this.getBusinesses()
+      } else {
+        return
+      }
     } catch (err) {
       this.props.history.push('/notfound')
     }
-    this.getBusinesses()
   }
 
+  //the user will only ever have 2 businesses attached to their model, so we call them here
   getBusinesses = async () => {
     try {
       const firstBusiness = await axios.get(`/api/businesses/${this.state.user.businesses[0]}`)
@@ -36,6 +41,8 @@ class UserShow extends React.Component {
 
   render() {
     const { user } = this.state
+    const { firstBusiness } = this.state
+    const { secondBusiness } = this.state
     if (!user.businesses) return null
     return (
       <Container className="">
@@ -53,28 +60,27 @@ class UserShow extends React.Component {
           </Col>
         </Row>
         <hr />
-        {this.state.firstBusiness &&
+        {(firstBusiness && secondBusiness) &&
           <>
             <h1 className="small-title">{user.username}'s favourite local businesses:</h1>
             <Row className="justify-content-md-center">
 
               <Col md="auto">
                 <Card style={{ width: '18rem' }}>
-                  <Card.Img className="business-image" variant="toptop" src={this.state.firstBusiness.image} alt={this.state.firstBusiness.name} />
+                  <Card.Img className="business-image" variant="toptop" src={firstBusiness.image} alt={firstBusiness.name} />
                   <Card.Body>
-                    <Card.Title>{this.state.firstBusiness.name}</Card.Title>
-                    <Card.Text>{this.state.firstBusiness.category}</Card.Text>
+                    <Card.Title>{firstBusiness.name}</Card.Title>
+                    <Card.Text>{firstBusiness.category}</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
 
-
               <Col md="auto">
                 <Card style={{ width: '18rem' }}>
-                  <Card.Img className="business-image" variant="toptop" src={this.state.secondBusiness.image} alt={this.state.secondBusiness.name} />
+                  <Card.Img className="business-image" variant="toptop" src={secondBusiness.image} alt={secondBusiness.name} />
                   <Card.Body>
-                    <Card.Title>{this.state.secondBusiness.name}</Card.Title>
-                    <Card.Text>{this.state.secondBusiness.category}</Card.Text>
+                    <Card.Title>{secondBusiness.name}</Card.Title>
+                    <Card.Text>{secondBusiness.category}</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>

@@ -10,20 +10,22 @@ class Navigation extends React.Component {
 
   state = { payload: '' }
 
+  //functions for creating a mobile responsive burger-menu style navbar
+
   // toggleNavbar = () => {
   //   this.setState({ navbarOpen: !this.state.navbarOpen })
+  // }
+
+    // componentDidUpdate(prevProps) {
+  //   if (this.props.location.pathname !== prevProps.location.pathname) {
+  //     this.setState({ navbarOpen: false })
+  //   }
   // }
 
   handleLogout = () => {
     Auth.logout()
     this.props.history.push('/')
   }
-
-  // componentDidUpdate(prevProps) {
-  //   if (this.props.location.pathname !== prevProps.location.pathname) {
-  //     this.setState({ navbarOpen: false })
-  //   }
-  // }
 
   componentDidMount() {
     if (Auth.isAuthenticated()) {
@@ -34,6 +36,7 @@ class Navigation extends React.Component {
     }
   }
 
+  //working on getting a logo to work on the navbar
   render() {
     return (
       <Navbar bg="light" variant="light">

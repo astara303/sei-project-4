@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col'
 
 import Auth from '../../lib/auth'
 
+//when clicked, links to the user show page
 const UserCard = ({ username, id, profile_image, location, payload }) => (
   <div key={id}>
     <Col md="auto">

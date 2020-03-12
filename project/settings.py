@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'businesses',
     'jwt_auth',
-    'questions',
     'corsheaders'
 ]
 
