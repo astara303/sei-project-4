@@ -3,11 +3,18 @@ import Auth from './auth'
 
 const csrftoken = Cookies.get('csrftoken')
 
-export const headers = {
-  common: {
+export const headers = includeToken => {
+  
+  const common =  {
     'X-CSRF-TOKEN': csrftoken
-  },
-  headers: {
-    Authorization: `Bearer ${Auth.getToken()}`
+  }
+
+  if (!includeToken) return { common }
+  
+  return { 
+    ...common, 
+    headers: { 
+      Authorization: `Bearer ${Auth.getToken()}` 
+    } 
   }
 }

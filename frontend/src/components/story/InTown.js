@@ -50,8 +50,8 @@ class InTown extends React.Component {
     e.preventDefault()
     const payload = Auth.getPayload().sub
     try {
-      await axios.patch(`api/users/${payload}/`, { ...this.state.user }, headers)
-      this.props.history.push('/roadworks')
+      await axios.patch(`api/users/${payload}/`, { ...this.state.user }, headers(true))
+      // this.props.history.push('/roadworks')
     } catch (err) {
       this.props.history.push('/notfound')
     }
@@ -59,6 +59,7 @@ class InTown extends React.Component {
 
   render() {
     const { clicked } = this.state
+    console.log(this.state.user)
     return (
       <header className="intown-masthead masthead">
         <Container>

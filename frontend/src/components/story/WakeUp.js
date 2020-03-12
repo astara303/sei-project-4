@@ -52,9 +52,10 @@ class WakeUp extends React.Component {
     e.preventDefault()
     const payload = Auth.getPayload().sub
     try {
-      await axios.patch(`api/users/${payload}/`, { ...this.state.user }, headers)
+      await axios.patch(`api/users/${payload}/`, { ...this.state.user }, headers(true))
       this.props.history.push('/intown')
     } catch (err) {
+      // console.log(err)
       this.props.history.push('/notfound')
     }
   }
