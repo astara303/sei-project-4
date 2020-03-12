@@ -7,6 +7,7 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
 import Auth from '../../lib/auth'
+import { headers } from '../../lib/headers'
 
 
 class WakeUp extends React.Component {
@@ -46,13 +47,12 @@ class WakeUp extends React.Component {
     }
   }
 
+  //must send cookie with this
   handleSubmit = async (e) => {
     e.preventDefault()
     const payload = Auth.getPayload().sub
     try {
-      await axios.patch(`api/users/${payload}/`, { ...this.state.user }, {
-        headers: { Authorization: `Bearer ${Auth.getToken()}` }
-      })
+      await axios.patch(`api/users/${payload}/`, { ...this.state.user }, headers)
       this.props.history.push('/intown')
     } catch (err) {
       this.props.history.push('/notfound')
