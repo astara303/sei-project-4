@@ -1,18 +1,13 @@
 
-// resources: https://scotch.io/starters/react/adding-sass-to-create-react-app-applications, https://create-react-app.dev/docs/adding-bootstrap/#using-a-custom-theme
 @import url('https://fonts.googleapis.com/css?family=Spartan|Staatliches&display=swap');
 
 body {
   margin: 0;
-  // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    // 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    // sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   font-family: 'Spartan';
   font-size: 15px;
-  // background-color: #D0FF97;
 }
 
 .masthead {
@@ -28,7 +23,6 @@ body {
   height: 100vh;
   background-size: cover;
   background-repeat: repeat;
-
 }
 
 // this is to make the longer pages have background image to the bottom
@@ -101,9 +95,9 @@ p {
   font-weight: bold;
 }
 
-.test-border {
-  border: 2px solid red;
-}
+// .test-border {
+//   border: 2px solid red;
+// }
 
 .profile-image {
   height: 250px;
@@ -144,6 +138,7 @@ sub {
   font-size: 24px;
 }
 
+// styling the text in the code interview questions
 .code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

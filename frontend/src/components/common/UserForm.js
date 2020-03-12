@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button'
 
 import ImageUpload from './ImageUpload'
 
+// this component is creating the structure for the user profile edit page and passing down all the handle functions as props to be attached to the different form fields 
 const UserForm = ({ data, handleChange, handleSubmit, handleChangeImage }) => {
   return (
     <Form onSubmit={handleSubmit}>
