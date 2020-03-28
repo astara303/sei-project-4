@@ -137,7 +137,7 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'jwt_auth.authentication.JWTAuthentication'
-    ]
+    ],
 }
 
 AUTH_USER_MODEL = 'jwt_auth.User'
