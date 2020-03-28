@@ -36,6 +36,7 @@ class Register extends React.Component {
   }
 
   render() {
+    console.log(this.state.error)
     return (
       <Container>
         <Row className="justify-content-md-center">
@@ -91,6 +92,7 @@ class Register extends React.Component {
                       </Form.Text>
                     }
                   </Form.Group> */}
+                  <p>{this.state.error}</p>
                   <Button variant="outline-dark" type="submit">Register Me</Button>
                 </Form>
               </Card.Body>

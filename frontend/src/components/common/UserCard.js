@@ -12,7 +12,7 @@ const UserCard = ({ username, id, profile_image, location, payload }) => (
     <Col md="auto">
       <Card style={{ width: '18rem' }}>
         <Link to={(Auth.getPayload().sub === id) ? `/profile/${payload}` : `/interviewers/${id}/`}>
-          <Card.Img className="profile-image" variant="top" src={profile_image} />
+          <Card.Img className="profile-image" variant="top" src={profile_image ? profile_image : 'https://i0.wp.com/www.repol.copl.ulaval.ca/wp-content/uploads/2019/01/default-user-icon.jpg?w=415'}/>
         </Link>
         <Card.Body>
           <Card.Title>{username}</Card.Title>

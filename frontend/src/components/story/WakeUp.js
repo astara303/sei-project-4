@@ -55,13 +55,14 @@ class WakeUp extends React.Component {
       await axios.patch(`api/users/${payload}/`, { ...this.state.user }, headers(true))
       this.props.history.push('/intown')
     } catch (err) {
-      // console.log(err)
-      this.props.history.push('/notfound')
+      console.log(err)
+      // this.props.history.push('/notfound')
     }
   }
 
   render() {
     if (!this.state.user) return null
+    console.log(this.state.user)
     const { clicked } = this.state
     return (
       <header className="wakeup-masthead masthead extra-masthead">

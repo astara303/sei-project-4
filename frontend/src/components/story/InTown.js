@@ -32,6 +32,7 @@ class InTown extends React.Component {
     }
   }
 
+  //saves chosenBusiness into array without saving over the previous choice
   handleClick = (e) => {
     let clicked = this.state.clicked
     const id = e.target.name
@@ -51,9 +52,11 @@ class InTown extends React.Component {
     const payload = Auth.getPayload().sub
     try {
       await axios.patch(`api/users/${payload}/`, { ...this.state.user }, headers(true))
-      // this.props.history.push('/roadworks')
+      console.log('here')
+      this.props.history.push('/roadworks')
     } catch (err) {
       this.props.history.push('/notfound')
+      console.log(err)
     }
   }
 
