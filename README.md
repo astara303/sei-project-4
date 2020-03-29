@@ -33,7 +33,7 @@ My responsibilities included:
 - Writing the story and the JavaScript to properly display the story choices.
 - Learning how to work with the Bootstrap framework in order to construct a layout for the site.
 
-For this project, I combined my previous experience building a quiz with my new skills in PostgreSQL and Django to create data tables, models, and their relationships from scratch. I chose to work with a friend who is amazing at illustrations to bring the story to life. A big thank you to Abigail Foreman for being my partner on this project!
+For this project, I combined my previous experience building a quiz with my new skills in PostgreSQL and Django to create data tables, models, and their relationships from scratch. I chose to work with a friend who is amazing at illustrations to bring the story to life. A big thank you to Abigail Foreman for being my partner on this project! @abigailforeman1
 
 ## Usage
 
