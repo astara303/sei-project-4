@@ -27,6 +27,8 @@ You can visit the site _[here](https://lets-interview.herokuapp.com/)_.
 - Heroku
 - GitHub
 
+<img src="https://i.imgur.com/EOrE5A0.png" width="350" height="250">
+
 My responsibilities included:
 - Planning the models and their relationships in the back end.
 - Creating the front-end React components and routing them or rendering them where appropriate in order to pass down the player’s score. The score is based on player choices and a degree of luck for every choice.
@@ -219,8 +221,8 @@ Everything was fixed and PATCHing to the appropriate place. Then, after the code
 - Don't be afraid of React's parent/child relationships.
   - There is always a way to send the data you need. This can be hard to see when first learning that information can only be sent from the parent to the child, and not vice-versa. But state can do wonders, as can passing down props and spreading in data you need when rendering a component within its parent.
 
-- Get creative with componentDidMount.
-  - It can be tough to know when to call functions in React after using vanilla JavaScript, but a combination of knowing how to use componentDidMount and event handlers really helps pages run smoothly. I would write functions that are called within the componentDidMount in order to streamline functionality.
+- Get creative with componentDidMount and event handlers.
+  - It can be tough to know when to call functions in React after using vanilla JavaScript, but a combination of knowing how to use componentDidMount and event handlers really helps pages run smoothly. I would write functions that are called within the componentDidMount, after receiving the asynchronous data from the back end and storing it in state, in order to streamline functionality.
   
 - Rendering information from the back end is asynchronous, so prepare!
   - Sometimes this meant wrapping the section in an && statement:
@@ -256,13 +258,12 @@ Everything was fixed and PATCHing to the appropriate place. Then, after the code
   ```
   
 - Tertiary statements are a life-saver!
-  - I was stressed that friends who signed up to test our site were added to the index page with broken images, as they had not supplied a user image and we do not request one on the registration form. The fix was easier than I thought! I inserted this into the line that displays the user image on the index page:
+  - It bothered me that friends who signed up to test our site were added to the index page with broken images, as they had not supplied a user image and we do not request one on the registration form. The fix was easier than I thought! I inserted this into the line that displays the user image on the index page:
   ```
   <Card.Img className="profile-image" variant="top" src={profile_image ? profile_image : 'https://i0.wp.com/www.repol.copl.ulaval.ca/wp-content/uploads/2019/01/default-user-icon.jpg?w=415'}/>
   ```
-  Et voila! No more stress!
-
-<img src="https://i.imgur.com/EOrE5A0.png" width="350" height="250">
+  Et voila!
+  <img src="https://i.imgur.com/tY2Lm6Q.png" width="350" height="200">
 
 ## Needs Improvement
 
